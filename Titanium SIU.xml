@@ -3,7 +3,7 @@
   <nextMetaDataId>9</nextMetaDataId>
   <name>Titanium SIU</name>
   <description>Channel to processes SIU messages into Titanium appointments.</description>
-  <revision>332</revision>
+  <revision>341</revision>
   <sourceConnector version="3.5.0">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -14,7 +14,7 @@
         <port>6661</port>
       </listenerConnectorProperties>
       <sourceConnectorProperties version="3.5.0">
-        <responseVariable>Auto-generate (After source transformer)</responseVariable>
+        <responseVariable>Auto-generate (Destinations completed)</responseVariable>
         <respondAfterProcessing>true</respondAfterProcessing>
         <processBatch>false</processBatch>
         <firstResponse>true</firstResponse>
@@ -54,78 +54,15 @@
     <transformer version="3.5.0">
       <elements>
         <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <name>Check if patient exists in Titanium</name>
-          <sequenceNumber>0</sequenceNumber>
-          <script>/*
-// get the patient ID from the repeated PID 3 field
-for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {
-	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {
-		var patientid = child[&apos;PID.3.1&apos;].toString();
-	}
-}
-
-logger.info(&quot;Patient ID = &quot; + patientid);
-
-//set up the database connection
-//var dbConn = ODBConn(&apos;open&apos;);
-
-//var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-//	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-//	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-//	&apos;sa&apos;,
-//	&apos;titanium&apos;
-//);
-
-//SQL to get the RecordNum
-var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos;&quot;;
-
-var results = SQLSelect(sql);
-
-if (results.size() == 0) {
-	logger.info(&quot;No such patient &quot; + patientid.toString() + &quot;, adding...&quot;);
-	// Get the next recordnum for a new Debtor4 record
-	var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;DEBTOR4&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;
-	var results = SQLSelect(sql);
-	results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-	var nextRecordNum = results.getString(1);
-	logger.info(&quot;NextDebtorRecordNum = &quot; + nextRecordNum);
-	channelMap.put(&apos;Next Debtor Record Number&apos;,nextRecordNum);
-	var patientRN = nextRecordNum;
-} else {
-	results.next(); // The ResultSet starts at row 0 - so we advance to row 1
-	var patientRN = results.getString(&apos;RecordNum&apos;);
-}
-
-logger.info(&quot;Patient RecordNum = &quot; + patientRN);
-logger.info(&quot;Patient code = &quot; + patientid.toString());
-
-channelMap.put(&apos;Patient RecordNum&apos; , patientRN);
-channelMap.put(&apos;Patient code&apos; , patientid.toString());
-//dbConn.close();
-*/</script>
-        </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
           <name>Get Site ID</name>
-          <sequenceNumber>1</sequenceNumber>
-          <script>//var dbConn = ODBConn(&apos;open&apos;);
-/*
-var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-	&apos;sa&apos;,
-	&apos;titanium&apos;
-);
-*/
-var sql = &quot;SELECT lSiteID from SITEID&quot;;
+          <sequenceNumber>0</sequenceNumber>
+          <script>var sql = &quot;SELECT lSiteID from SITEID&quot;;
 
-//var results = dbConn.executeCachedQuery(sql);
 var results = SQLSelect(sql);
 results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
 var siteID = results.getString(&apos;lSiteID&apos;);
 
-channelMap.put(&quot;Site ID&quot;,siteID);
-
-//dbConn.close();</script>
+channelMap.put(&quot;Site ID&quot;,siteID);</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
       </elements>
       <inboundTemplate encoding="base64"></inboundTemplate>
@@ -155,7 +92,7 @@ channelMap.put(&quot;Site ID&quot;,siteID);
           <segmentDelimiter>\r</segmentDelimiter>
           <successfulACKCode>AA</successfulACKCode>
           <successfulACKMessage></successfulACKMessage>
-          <errorACKCode>AE</errorACKCode>
+          <errorACKCode>AA</errorACKCode>
           <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
           <rejectedACKCode>AR</rejectedACKCode>
           <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
@@ -212,7 +149,18 @@ channelMap.put(&quot;Site ID&quot;,siteID);
       </outboundProperties>
     </transformer>
     <filter version="3.5.0">
-      <elements/>
+      <elements>
+        <com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
+          <name>Check if dentist is in Titanium</name>
+          <sequenceNumber>0</sequenceNumber>
+          <script>if (globalChannelMap.get(msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString())) {
+	return true;
+} else {
+	logger.info(msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString() + &quot; not found&quot;);
+	return false;
+}</script>
+        </com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
+      </elements>
     </filter>
     <transportName>TCP Listener</transportName>
     <mode>SOURCE</mode>
@@ -248,8 +196,7 @@ channelMap.put(&quot;Site ID&quot;,siteID);
         <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
         <url>${maps.get(&apos;TitaniumDB&apos;)}</url>
         <username>TitaniumDental</username>
-        <password>
-		</password>
+        <password>!Titanium1</password>
         <query>insert into debtor4
 (recordnum, code, siteid)
 values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient code&apos;)}, ${maps.get(&apos;Site ID&apos;)})</query>
@@ -428,12 +375,11 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
           <com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
             <name>Find if patient already exists</name>
             <sequenceNumber>0</sequenceNumber>
-            <script>// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {&#xd;		var patientid = child[&apos;PID.3.1&apos;].toString();&#xd;	}&#xd;}&#xd;&#xd;logger.info(&quot;Patient ID = &quot; + patientid);&#xd;&#xd;//set up the database connection&#xd;//var dbConn = ODBConn(&apos;open&apos;);&#xd;&#xd;/*var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&#xd;	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,&#xd;	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,&#xd;	&apos;sa&apos;,&#xd;	&apos;titanium&apos;&#xd;);*/&#xd;&#xd;//SQL to get the RecordNum&#xd;var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos;&quot;;&#xd;&#xd;var results = SQLSelect(sql);&#xd;&#xd;if (results.size() == 0) {&#xd;	logger.info(&quot;No such patient &quot; + patientid.toString() + &quot;, adding...&quot;);&#xd;	// Get the next recordnum for a new Debtor4 record&#xd;	var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;DEBTOR4&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;&#xd;	var results = SQLSelect(sql);&#xd;	results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1&#xd;	var nextRecordNum = results.getString(1);&#xd;	logger.info(&quot;NextDebtorRecordNum = &quot; + nextRecordNum);&#xd;	channelMap.put(&apos;Next Debtor Record Number&apos;,nextRecordNum);&#xd;	var patientRN = nextRecordNum;
+            <script>// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {&#xd;		var patientid = child[&apos;PID.3.1&apos;].toString();&#xd;	}&#xd;}&#xd;&#xd;logger.info(&quot;Patient ID = &quot; + patientid);&#xd;&#xd;//SQL to get the RecordNum&#xd;var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos;&quot;;&#xd;&#xd;var results = SQLSelect(sql);&#xd;&#xd;if (results.size() == 0) {&#xd;	logger.info(&quot;No such patient &quot; + patientid.toString() + &quot;, adding...&quot;);&#xd;	// Get the next recordnum for a new Debtor4 record&#xd;	var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;DEBTOR4&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;&#xd;	var results = SQLSelect(sql);&#xd;	results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1&#xd;	var nextRecordNum = results.getString(1);&#xd;	logger.info(&quot;NextDebtorRecordNum = &quot; + nextRecordNum);&#xd;	channelMap.put(&apos;Next Debtor Record Number&apos;,nextRecordNum);&#xd;	var patientRN = nextRecordNum;
 	logger.info(&quot;Patient RecordNum = &quot; + patientRN);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());&#xd;	return true;&#xd;} else {&#xd;	results.next(); // The ResultSet starts at row 0 - so we advance to row 1&#xd;	var patientRN = results.getString(&apos;RecordNum&apos;);
 	logger.info(&quot;Patient already exists&quot;);
 	logger.info(&quot;Patient RecordNum = &quot; + patientRN);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());
-	return false;&#xd;}&#xd;/*&#xd;logger.info(&quot;Patient RecordNum = &quot; + patientRN);&#xd;logger.info(&quot;Patient code = &quot; + patientid.toString());&#xd;channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;channelMap.put(&apos;Patient code&apos; , patientid.toString());&#xd;//dbConn.close();
-*/</script>
+	return false;&#xd;}</script>
           </com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
         </elements>
       </filter>
@@ -498,7 +444,8 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
             <name>Convert to A08</name>
             <sequenceNumber>0</sequenceNumber>
             <script>msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.1&apos;] = &apos;ADT&apos;;
-msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;] = &apos;A08&apos;;</script>
+msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;] = &apos;A08&apos;;
+msg[&apos;MSH&apos;][&apos;MSH.12&apos;][&apos;MSH.12.1&apos;] = &apos;2.6&apos;;</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
         </elements>
         <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTAzXkhkd2FNZWRpY2Fs
@@ -723,7 +670,7 @@ MjAwMHx8fDEwfE18fEJvb2tlZAo=</inboundTemplate>
         <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
         <url>${maps.get(&apos;TitaniumDB&apos;)}</url>
         <username>Titaniumdental</username>
-        <password>lolno</password>
+        <password>!Titanium1</password>
         <query>MERGE APPT6 as [Target]
 USING (SELECT
 ${maps.get(&apos;Appointment ID&apos;)} as apptid, 
@@ -760,109 +707,27 @@ values (${maps.get(&apos;Appointment RecordNum&apos;)},${maps.get(&apos;Site ID&
       <transformer version="3.5.0">
         <elements>
           <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>Get RecordNum from Patient ID</name>
-            <sequenceNumber>0</sequenceNumber>
-            <script>/* --- moved to it&apos;s own destination so we can add non-existent patients
-
-// get the patient ID from the repeated PID 3 field
-for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {
-	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {
-		var patientid = child[&apos;PID.3.1&apos;].toString();
-	}
-}
-
-logger.info(&quot;Patient ID = &quot; + patientid);
-
-//set up the database connection
-//var dbConn = ODBConn(&apos;open&apos;);
-
-//var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-//	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-//	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-//	&apos;sa&apos;,
-//	&apos;titanium&apos;
-//);
-
-//SQL to get the RecordNum
-var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos;&quot;;
-
-var results = SQLSelect(sql);
-
-if (results.size() == 0) {
-	logger.info(&quot;No such patient &quot; + patientid.toString());
-}
-
-results.next(); // The ResultSet starts at row 0 - so we advance to row 1
-var patientRN = results.getString(&apos;RecordNum&apos;);
-
-logger.info(&quot;Patient RecordNum = &quot; + patientRN);
-
-channelMap.put(&apos;Patient RecordNum&apos;,patientRN);
-
-//dbConn.close();
-
-*/</script>
-          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
             <name>Get NextRecordNum from FileInfo</name>
-            <sequenceNumber>1</sequenceNumber>
-            <script>/*function PadDigits(n, totalDigits) { //for padding recordnum fields - no longer necessary
-	n = n.toString(); 
-	var s = n + &quot;&quot;; 
-	while (totalDigits &gt; s.length) {
-		s = &quot;0&quot; + s; 
-	}
-	return s;
-}*/
-//var dbConn = ODBConn(&apos;open&apos;);
-/*
-var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-	&apos;sa&apos;,
-	&apos;titanium&apos;
-);
-*/
-//var sql = &quot;SELECT NextRecordNum from FILEINFO where fileid = 120&quot;;
-var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;APPT6&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;
+            <sequenceNumber>0</sequenceNumber>
+            <script>var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;APPT6&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;
 
-//var results = dbConn.executeCachedQuery(sql);
 var results = SQLSelect(sql);
 
 results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
 
 var nextRecordNum = results.getString(1);
 logger.info(&quot;NextRecordNum = &quot; + nextRecordNum);
-//nextRecordNum++;
-//nextRecordNum = PadDigits(nextRecordNum,10) + &quot;:00120:00000&quot;;
 
-channelMap.put(&apos;Next Record Number&apos;,nextRecordNum);
-
-// increment the nextRecordNum so there&apos;s a new one available for next time
-// the stored procedure now handles this
-//sql = &quot;UPDATE FILEINFO SET NextRecordNum = NextRecordNum + 1 WHERE FileID = 120;&quot;
-//dbConn.executeUpdate(sql);
-
-//dbConn.close();</script>
+channelMap.put(&apos;Next Record Number&apos;,nextRecordNum);</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
           <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
             <name>Check if ExternalID/Appointment ID exists</name>
-            <sequenceNumber>2</sequenceNumber>
-            <script>//var dbConn = ODBConn(&apos;open&apos;);
-/*
-var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-	&apos;sa&apos;,
-	&apos;titanium&apos;
-);*/
-
-var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
+            <sequenceNumber>1</sequenceNumber>
+            <script>var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
 logger.info(&quot;External ID from message = &quot; + msgApptID );
 
 var sql = &quot;SELECT recordnum,ssExternalID from APPT6 where ssExternalID = &apos;&quot; + msgApptID + &quot;&apos;&quot;;
 
-//var results = dbConn.executeCachedQuery(sql);
 var results = SQLSelect(sql);
 
 if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
@@ -873,21 +738,17 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
 } else { // the appointment doesn&apos;t exist - a new one must be created
 	var apptID = msgApptID;
 	var nextsql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;APPT6&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;
-	//var nextresults = dbConn.executeCachedQuery(nextsql);
 	var nextresults = SQLSelect(nextsql);
 	nextresults.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
 	var nextRecordNum = nextresults.getString(&apos;nextRecordNum&apos;);
 	logger.info(&quot;NextRecordNum = &quot; + nextRecordNum);
 	channelMap.put(&quot;Appointment RecordNum&quot;,nextRecordNum);
 	channelMap.put(&quot;Appointment ID&quot;,apptID);
-}
-
-
-//dbConn.close();</script>
+}</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
           <com.mirth.connect.plugins.mapper.MapperStep>
             <name>Doctor ID</name>
-            <sequenceNumber>3</sequenceNumber>
+            <sequenceNumber>2</sequenceNumber>
             <variable>Doctor ID</variable>
             <mapping>globalChannelMap.get(msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString())</mapping>
             <defaultValue></defaultValue>
@@ -896,7 +757,7 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
           </com.mirth.connect.plugins.mapper.MapperStep>
           <com.mirth.connect.plugins.mapper.MapperStep>
             <name>Appointment Date</name>
-            <sequenceNumber>4</sequenceNumber>
+            <sequenceNumber>3</sequenceNumber>
             <variable>Appointment Date</variable>
             <mapping>DateUtil.convertDate(&quot;yyyyMMdd&quot;,&quot;yyyy-MM-dd&quot;,msg[&apos;AIL&apos;][&apos;AIL.6&apos;][&apos;AIL.6.1&apos;].toString().substring(0,8))</mapping>
             <defaultValue></defaultValue>
@@ -905,7 +766,7 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
           </com.mirth.connect.plugins.mapper.MapperStep>
           <com.mirth.connect.plugins.mapper.MapperStep>
             <name>Appointment Time</name>
-            <sequenceNumber>5</sequenceNumber>
+            <sequenceNumber>4</sequenceNumber>
             <variable>Appointment Time</variable>
             <mapping>&quot;1899-12-30 &quot; + msg[&apos;AIL&apos;][&apos;AIL.6&apos;][&apos;AIL.6.1&apos;].toString().substring(8,10) + &quot;:&quot; + msg[&apos;AIL&apos;][&apos;AIL.6&apos;][&apos;AIL.6.1&apos;].toString().substring(10,12) + &quot;:00&quot;</mapping>
             <defaultValue></defaultValue>
@@ -914,7 +775,7 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
           </com.mirth.connect.plugins.mapper.MapperStep>
           <com.mirth.connect.plugins.mapper.MapperStep>
             <name>Appointment Length</name>
-            <sequenceNumber>6</sequenceNumber>
+            <sequenceNumber>5</sequenceNumber>
             <variable>Appointment Length</variable>
             <mapping>msg[&apos;SCH&apos;][&apos;SCH.9&apos;][&apos;SCH.9.1&apos;].toString()</mapping>
             <defaultValue></defaultValue>
@@ -923,27 +784,9 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
           </com.mirth.connect.plugins.mapper.MapperStep>
           <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
             <name>Get next Appointment UID</name>
-            <sequenceNumber>7</sequenceNumber>
-            <script>/*function PadDigits(n, totalDigits) { //for padding recordnum fields
-	n = n.toString(); 
-	var s = n + &quot;&quot;; 
-	while (totalDigits &gt; s.length) {
-		s = &quot;0&quot; + s; 
-	}
-	return s;
-}
-//var dbConn = ODBConn(&apos;open&apos;);
+            <sequenceNumber>6</sequenceNumber>
+            <script>var sql = &quot;declare @r varchar(25);exec spSpark_GetNextUID &apos;1059&apos;,@recordnum = @r output;select @r as nextUID;&quot;;
 
-var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-	&apos;sa&apos;,
-	&apos;titanium&apos;
-);*/
-
-//var sql = &quot;SELECT lLastNumUsed FROM UID WHERE RecordNum = &apos;0000000054:00105:00000&apos;&quot;;
-var sql = &quot;declare @r varchar(25);exec spSpark_GetNextUID &apos;1059&apos;,@recordnum = @r output;select @r as nextUID;&quot;;
-//var results = dbConn.executeCachedQuery(sql);
 var results = SQLSelect(sql);
 
 results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
@@ -951,58 +794,17 @@ results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we a
 var apptUID = results.getString(&apos;nextUID&apos;);
 
 logger.info(&quot;Appointment UID = &quot; + apptUID);
-//apptUID++;
-//apptUID = PadDigits(apptUID,10) + &quot;:01059:00000&quot;;
 
-channelMap.put(&apos;Appointment UID&apos;, apptUID);
-
-// increment the uid so there&apos;s a new one available for next time
-// the stored procedure does this
-//sql = &quot;UPDATE UID SET lLastNumUsed = lLastNumUsed + 1 WHERE RecordNum = &apos;0000000054:00105:00000&apos;;&quot;
-//results = dbConn.executeUpdate(sql);
-
-//dbConn.close();</script>
-          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>Get Site ID</name>
-            <sequenceNumber>8</sequenceNumber>
-            <script>//var dbConn = ODBConn(&apos;open&apos;);
-/*
-var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-	&apos;sa&apos;,
-	&apos;titanium&apos;
-);
-*/
-var sql = &quot;SELECT lSiteID from SITEID&quot;;
-
-//var results = dbConn.executeCachedQuery(sql);
-var results = SQLSelect(sql);
-results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-var siteID = results.getString(&apos;lSiteID&apos;);
-
-channelMap.put(&quot;Site ID&quot;,siteID);
-
-//dbConn.close();</script>
+channelMap.put(&apos;Appointment UID&apos;, apptUID);</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
           <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
             <name>Get room</name>
-            <sequenceNumber>9</sequenceNumber>
-            <script>/*//var dbConn = ODBConn(&apos;open&apos;);
-var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-	&apos;sa&apos;,
-	&apos;titanium&apos;
-);
-*/
-// Gets the room name that the dentist&apos;s roster is in from the BLOCK6 table 
+            <sequenceNumber>7</sequenceNumber>
+            <script>// Gets the room name that the dentist&apos;s roster is in from the BLOCK6 table 
 var sql = &quot;with roster as (select dateadd(minute, wstarttime,dtdate) as starttm,dateadd(minute,wLength,dateadd(minute, wstarttime,dtdate)) as endtm,*&quot; +
 &quot;from block6 where dtdate = &apos;&quot; + $(&apos;Appointment Date&apos;) + &quot;&apos; and wtype = 3 and providercode = &apos;&quot; + $(&apos;Doctor ID&apos;) + &quot;&apos;) &quot; + 
 &quot;select room from roster where cast(&apos;&quot; + $(&apos;Appointment Date&apos;) + &quot;&apos; as datetime) + cast(&apos;&quot; + $(&apos;Appointment Time&apos;) + &quot;&apos; as time) between starttm and endtm;&quot;
 
-//var results = dbConn.executeCachedQuery(sql);
 var results = SQLSelect(sql);
 if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
 	var room = results.getString(&apos;room&apos;);
@@ -1011,12 +813,11 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
 }
 
 channelMap.put(&quot;Room&quot;,room);
-logger.info(&quot;Room = &quot; + room.toString());
-//dbConn.close();</script>
+logger.info(&quot;Room = &quot; + room.toString());</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
           <com.mirth.connect.plugins.mapper.MapperStep>
             <name>Current Date</name>
-            <sequenceNumber>10</sequenceNumber>
+            <sequenceNumber>8</sequenceNumber>
             <variable>Current Date</variable>
             <mapping>DateUtil.getCurrentDate(&apos;yyyy-MM-dd&apos;)</mapping>
             <defaultValue>DateUtil.getCurrentDate(&apos;yyyy-MM-dd&apos;)</defaultValue>
@@ -1025,18 +826,13 @@ logger.info(&quot;Room = &quot; + room.toString());
           </com.mirth.connect.plugins.mapper.MapperStep>
           <com.mirth.connect.plugins.mapper.MapperStep>
             <name>Current Time</name>
-            <sequenceNumber>11</sequenceNumber>
+            <sequenceNumber>9</sequenceNumber>
             <variable>Current Time</variable>
             <mapping>&quot;1899-12-30 &quot; + DateUtil.getCurrentDate(&apos;HH:mm:ss&apos;)</mapping>
             <defaultValue>&quot;1899-12-30 &quot; + DateUtil.getCurrentDate(&apos;HH:mm:ss&apos;)</defaultValue>
             <replacements/>
             <scope>CHANNEL</scope>
           </com.mirth.connect.plugins.mapper.MapperStep>
-          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>log</name>
-            <sequenceNumber>12</sequenceNumber>
-            <script>logger.info(&quot;date: &quot; + $(&apos;Current Date&apos;) + &quot; time: &quot; + $(&apos;Current Time&apos;));</script>
-          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
         </elements>
         <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTA3Xkhkd2FNZWRpY2Fs
 RmFjaWxpdHkuMDEwN15MfHwwOTE3fDIwMTcwNDI4MTQxODU2fHxTSVVeUzEyXlNJVV9TMTJ8fFB8
@@ -1279,7 +1075,7 @@ MDgwMDAwfA1SR1N8MQ1BSUx8MXxBfHx8fDIwMTcwNTAyMDgwMDAwfHx8MTB8TXx8Qm9va2Vk</inboun
         <driver>net.sourceforge.jtds.jdbc.Driver</driver>
         <url>${maps.get(&apos;TitaniumDB&apos;)}</url>
         <username>TitaniumDental</username>
-        <password>lolno</password>
+        <password>!Titanium1</password>
         <query>UPDATE APPT6
 SET wStatus = 7, 
 UpdatedDate = CAST(${maps.get(&apos;Current Date&apos;)} as Date),
@@ -1292,21 +1088,11 @@ WHERE ssExternalID = ${maps.get(&apos;Appointment ID&apos;)}</query>
           <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
             <name>Check if ExternalID/Appointment ID exists</name>
             <sequenceNumber>0</sequenceNumber>
-            <script>//var dbConn = ODBConn(&apos;open&apos;);
-/*
-var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
-	&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
-	&apos;jdbc:jtds:sqlserver://localhost:1433/BR_PMH&apos;,
-	&apos;sa&apos;,
-	&apos;titanium&apos;
-);*/
-
-var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
+            <script>var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
 logger.info(&quot;External ID from message = &quot; + msgApptID );
 
 var sql = &quot;SELECT recordnum,ssExternalID from APPT6 where ssExternalID = &apos;&quot; + msgApptID + &quot;&apos;&quot;;
 
-//var results = dbConn.executeCachedQuery(sql);
 var results = SQLSelect(sql);
 
 if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
@@ -2032,7 +1818,7 @@ return message;</preprocessingScript>
 return;</postprocessingScript>
   <deployScript>// connection string, so we don&apos;t have to define it everywhere
 
-//$g(&apos;dbTitanium&apos;, DatabaseConnectionFactory.createDatabaseConnection(&apos;net.sourceforge.jtds.jdbc.Driver&apos;,&apos;jdbc:jtds:
+//$g(&apos;dbTitanium&apos;, DatabaseConnectionFactory.createDatabaseConnection(&apos;net.sourceforge.jtds.jdbc.Driver&apos;,&apos;jdbc:jtds:sqlserver://sparkdb05:1433/BR_PMH;&apos;,&apos;titaniumdental&apos;,&apos;!Titanium1&apos;));
 /*
 globalChannelMap.put(
 	&apos;TitaniumDB&apos;,&apos;jdbc:sqlserver://&apos; + configurationMap.get(&apos;Titanium Database Server&apos;) + 
@@ -2128,7 +1914,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1509420900138</time>
+        <time>1510011207907</time>
         <timezone>Pacific/Auckland</timezone>
       </lastModified>
       <pruningSettings>
@@ -2154,17 +1940,17 @@ return;</undeployScript>
           <codeTemplate version="3.5.0">
             <id>207048c9-db67-4f2b-bb06-fd6bf127c425</id>
             <name>Open database connection</name>
-            <revision>6</revision>
+            <revision>7</revision>
             <lastModified>
-              <time>1505104612327</time>
+              <time>1509681389931</time>
               <timezone>Pacific/Auckland</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
               </delegate>
             </contextSet>
@@ -2172,37 +1958,38 @@ return;</undeployScript>
               <type>FUNCTION</type>
               <code>/**
 	A function to open a database connection for use in the Titanium transformers
-
+	No longer used
 	@param {String} state - the state you want the connection to be in (&apos;open&apos;)
 	@return {String} returns an open database connection
-*/
+
 function ODBConn(state) {
 	if(state==&quot;open&quot;) {
   		var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
 			&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
 			&apos;jdbc:jtds:sqlserver://sparkdb05:1433/BR_PMH&apos;,
 			&apos;titaniumdental&apos;,
-			&apos;lolno&apos;
+			&apos;!Titanium1&apos;
 		);
   	}
  	return dbConn;
-}</code>
+}
+*/</code>
             </properties>
           </codeTemplate>
           <codeTemplate version="3.5.0">
             <id>38460903-b506-42c8-a9c2-adcb2632ca86</id>
             <name>SQL Query</name>
-            <revision>22</revision>
+            <revision>23</revision>
             <lastModified>
-              <time>1505254099106</time>
+              <time>1509679641730</time>
               <timezone>Pacific/Auckland</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
               </delegate>
             </contextSet>
@@ -2218,10 +2005,8 @@ function SQLSelect(sql) {
 	//connection string in the format: jdbc:sqlserver://servername:port;databasename=dbname
 	var sqlserver = &apos;jdbc:sqlserver://&apos; + configurationMap.get(&apos;Titanium Database Server&apos;) + 
 	&quot;;databaseName=&quot; + configurationMap.get(&apos;Titanium Database Name&apos;) + &quot;;ssl=require;&quot;;
-	//logger.info(&quot;query &quot; + sqlserver);
 
 	var dbConn = DatabaseConnectionFactory.createDatabaseConnection(	
-		//&apos;net.sourceforge.jtds.jdbc.Driver&apos;, // jtds jdbc driver doesn&apos;t like SSL
 		&apos;com.microsoft.sqlserver.jdbc.SQLServerDriver&apos;,
 		sqlserver,	
 		configurationMap.get(&apos;Titanium Username&apos;),	
@@ -2237,17 +2022,17 @@ function SQLSelect(sql) {
           <codeTemplate version="3.5.0">
             <id>fb4d7a5c-410f-4a3d-b21c-3892982599d2</id>
             <name>SQL Update</name>
-            <revision>9</revision>
+            <revision>10</revision>
             <lastModified>
-              <time>1505254099174</time>
+              <time>1509679641817</time>
               <timezone>Pacific/Auckland</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
               </delegate>
             </contextSet>
@@ -2266,7 +2051,6 @@ function SQLUpdate(sql) {
 	//logger.info(&quot;update&quot;);
 
 	var dbConn = DatabaseConnectionFactory.createDatabaseConnection(	
-		//&apos;net.sourceforge.jtds.jdbc.Driver&apos;,	// jtds jdbc driver doesn&apos;t like SSL
 		&apos;com.microsoft.sqlserver.jdbc.SQLServerDriver&apos;,
 		sqlserver,	
 		configurationMap.get(&apos;Titanium Username&apos;),	

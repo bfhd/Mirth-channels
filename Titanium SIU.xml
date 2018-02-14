@@ -3,21 +3,17 @@
   <nextMetaDataId>9</nextMetaDataId>
   <name>Titanium SIU</name>
   <description>Channel to processes SIU messages into Titanium appointments.</description>
-  <revision>7</revision>
+  <revision>19</revision>
   <sourceConnector version="3.5.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
-    <properties class="com.mirth.connect.connectors.tcp.TcpReceiverProperties" version="3.5.1">
+    <properties class="com.mirth.connect.connectors.vm.VmReceiverProperties" version="3.5.1">
       <pluginProperties/>
-      <listenerConnectorProperties version="3.5.1">
-        <host>0.0.0.0</host>
-        <port>21000</port>
-      </listenerConnectorProperties>
       <sourceConnectorProperties version="3.5.1">
-        <responseVariable>Auto-generate (Destinations completed)</responseVariable>
+        <responseVariable>None</responseVariable>
         <respondAfterProcessing>true</respondAfterProcessing>
         <processBatch>false</processBatch>
-        <firstResponse>true</firstResponse>
+        <firstResponse>false</firstResponse>
         <processingThreads>1</processingThreads>
         <resourceIds class="linked-hash-map">
           <entry>
@@ -27,29 +23,6 @@
         </resourceIds>
         <queueBufferSize>1000</queueBufferSize>
       </sourceConnectorProperties>
-      <transmissionModeProperties class="com.mirth.connect.plugins.mllpmode.MLLPModeProperties">
-        <pluginPointName>MLLP</pluginPointName>
-        <startOfMessageBytes>0B</startOfMessageBytes>
-        <endOfMessageBytes>1C0D</endOfMessageBytes>
-        <useMLLPv2>false</useMLLPv2>
-        <ackBytes>06</ackBytes>
-        <nackBytes>15</nackBytes>
-        <maxRetries>2</maxRetries>
-      </transmissionModeProperties>
-      <serverMode>true</serverMode>
-      <remoteAddress></remoteAddress>
-      <remotePort></remotePort>
-      <overrideLocalBinding>false</overrideLocalBinding>
-      <reconnectInterval>5000</reconnectInterval>
-      <receiveTimeout>0</receiveTimeout>
-      <bufferSize>65536</bufferSize>
-      <maxConnections>10</maxConnections>
-      <keepConnectionOpen>true</keepConnectionOpen>
-      <dataTypeBinary>false</dataTypeBinary>
-      <charsetEncoding>DEFAULT_ENCODING</charsetEncoding>
-      <respondOnNewConnection>0</respondOnNewConnection>
-      <responseAddress></responseAddress>
-      <responsePort></responsePort>
     </properties>
     <transformer version="3.5.1">
       <elements>
@@ -153,16 +126,16 @@ channelMap.put(&quot;Site ID&quot;,siteID);</script>
         <com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
           <name>Check if dentist is in Titanium</name>
           <sequenceNumber>0</sequenceNumber>
-          <script>if (globalChannelMap.get(msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString()) || msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString() == &apos;S15&apos;) {
+          <script>if (globalChannelMap.get(msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString()) || msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString() == &quot;S15&quot;) {
 	return true;
 } else {
-	logger.info(&quot;Dentist &quot; + msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString() + &quot; not found&quot;);
+	logger.info(&quot;SIU: Dentist &quot; + msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString() + &quot; not found&quot;);
 	return false;
 }</script>
         </com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
       </elements>
     </filter>
-    <transportName>TCP Listener</transportName>
+    <transportName>Channel Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
     <waitForPrevious>true</waitForPrevious>
@@ -375,10 +348,9 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
           <com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
             <name>Find if patient already exists</name>
             <sequenceNumber>0</sequenceNumber>
-            <script>// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {&#xd;		var patientid = child[&apos;PID.3.1&apos;].toString();&#xd;	}&#xd;}&#xd;&#xd;logger.info(&quot;Patient ID = &quot; + patientid);&#xd;&#xd;//SQL to get the RecordNum&#xd;var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos;&quot;;&#xd;&#xd;var results = SQLSelect(sql);&#xd;&#xd;if (results.size() == 0) {&#xd;	logger.info(&quot;No such patient &quot; + patientid.toString() + &quot;, adding...&quot;);&#xd;	// Get the next recordnum for a new Debtor4 record&#xd;	var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;DEBTOR4&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;&#xd;	var results = SQLSelect(sql);&#xd;	results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1&#xd;	var nextRecordNum = results.getString(1);&#xd;	logger.info(&quot;NextDebtorRecordNum = &quot; + nextRecordNum);&#xd;	channelMap.put(&apos;Next Debtor Record Number&apos;,nextRecordNum);&#xd;	var patientRN = nextRecordNum;
-	logger.info(&quot;Patient RecordNum = &quot; + patientRN);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());&#xd;	return true;&#xd;} else {&#xd;	results.next(); // The ResultSet starts at row 0 - so we advance to row 1&#xd;	var patientRN = results.getString(&apos;RecordNum&apos;);
-	logger.info(&quot;Patient already exists&quot;);
-	logger.info(&quot;Patient RecordNum = &quot; + patientRN);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());
+            <script>// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {&#xd;		var patientid = child[&apos;PID.3.1&apos;].toString();&#xd;	}&#xd;}&#xd;&#xd;logger.info(&quot;Patient ID = &quot; + patientid);&#xd;&#xd;//SQL to get the RecordNum&#xd;var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos; and deleted = 0&quot;;&#xd;&#xd;var results = SQLSelect(sql);&#xd;&#xd;if (results.size() == 0) {&#xd;	logger.info(&quot;SIU: No such patient &quot; + patientid.toString() + &quot;, adding...&quot;);&#xd;	// Get the next recordnum for a new Debtor4 record&#xd;	var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;DEBTOR4&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;&#xd;	var results = SQLSelect(sql);&#xd;	results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1&#xd;	var nextRecordNum = results.getString(1);&#xd;	logger.info(&quot;SIU: NextDebtorRecordNum = &quot; + nextRecordNum);&#xd;	channelMap.put(&apos;Next Debtor Record Number&apos;,nextRecordNum);&#xd;	var patientRN = nextRecordNum;
+	logger.info(&quot;SIU: Patient RecordNum = &quot; + patientRN);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());&#xd;	return true;&#xd;} else {&#xd;	results.next(); // The ResultSet starts at row 0 - so we advance to row 1&#xd;	var patientRN = results.getString(&apos;RecordNum&apos;);
+	logger.info(&quot;SIU: Patient Recordnum &quot; + patientRN + &quot; already exists&quot;);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());
 	return false;&#xd;}</script>
           </com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
         </elements>
@@ -422,7 +394,7 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
           <nackBytes>15</nackBytes>
           <maxRetries>2</maxRetries>
         </transmissionModeProperties>
-        <remoteAddress>WSIO124APP.hdwa.health.wa.gov.au</remoteAddress>
+        <remoteAddress>wsio123app.hdwa.health.wa.gov.au</remoteAddress>
         <remotePort>17000</remotePort>
         <overrideLocalBinding>false</overrideLocalBinding>
         <localAddress>0.0.0.0</localAddress>
@@ -716,7 +688,7 @@ var results = SQLSelect(sql);
 results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
 
 var nextRecordNum = results.getString(1);
-logger.info(&quot;NextRecordNum = &quot; + nextRecordNum);
+logger.info(&quot;SIU: NextRecordNum = &quot; + nextRecordNum);
 
 channelMap.put(&apos;Next Record Number&apos;,nextRecordNum);</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
@@ -724,7 +696,7 @@ channelMap.put(&apos;Next Record Number&apos;,nextRecordNum);</script>
             <name>Check if ExternalID/Appointment ID exists</name>
             <sequenceNumber>1</sequenceNumber>
             <script>var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
-logger.info(&quot;External ID from message = &quot; + msgApptID );
+logger.info(&quot;SIU: External ID from message = &quot; + msgApptID );
 
 var sql = &quot;SELECT recordnum,ssExternalID from APPT6 where ssExternalID = &apos;&quot; + msgApptID + &quot;&apos;&quot;;
 
@@ -741,7 +713,7 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
 	var nextresults = SQLSelect(nextsql);
 	nextresults.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
 	var nextRecordNum = nextresults.getString(&apos;nextRecordNum&apos;);
-	logger.info(&quot;NextRecordNum = &quot; + nextRecordNum);
+	logger.info(&quot;SIU: NextRecordNum = &quot; + nextRecordNum);
 	channelMap.put(&quot;Appointment RecordNum&quot;,nextRecordNum);
 	channelMap.put(&quot;Appointment ID&quot;,apptID);
 }</script>
@@ -793,7 +765,7 @@ results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we a
 
 var apptUID = results.getString(&apos;nextUID&apos;);
 
-logger.info(&quot;Appointment UID = &quot; + apptUID);
+logger.info(&quot;SIU: Appointment UID = &quot; + apptUID);
 
 channelMap.put(&apos;Appointment UID&apos;, apptUID);</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
@@ -813,8 +785,7 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
 }
 
 channelMap.put(&quot;Room&quot;,room);
-logger.info(&quot;Room = &quot; + room.toString());
-logger.info(&quot;Dentist = &quot; + $(&apos;Doctor ID&apos;));</script>
+logger.info(&quot;SIU: Room = &quot; + room.toString());</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
           <com.mirth.connect.plugins.mapper.MapperStep>
             <name>Current Date</name>
@@ -1073,7 +1044,7 @@ MDgwMDAwfA1SR1N8MQ1BSUx8MXxBfHx8fDIwMTcwNTAyMDgwMDAwfHx8MTB8TXx8Qm9va2Vk</inboun
           <queueBufferSize>1000</queueBufferSize>
           <reattachAttachments>true</reattachAttachments>
         </destinationConnectorProperties>
-        <driver>net.sourceforge.jtds.jdbc.Driver</driver>
+        <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
         <url>${maps.get(&apos;TitaniumDB&apos;)}</url>
         <username>TitaniumDental</username>
         <password>!Titanium1</password>
@@ -1090,7 +1061,7 @@ WHERE ssExternalID = ${maps.get(&apos;Appointment ID&apos;)}</query>
             <name>Check if ExternalID/Appointment ID exists</name>
             <sequenceNumber>0</sequenceNumber>
             <script>var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
-logger.info(&quot;External ID from message = &quot; + msgApptID );
+logger.info(&quot;SIU: External ID from message = &quot; + msgApptID );
 
 var sql = &quot;SELECT recordnum,ssExternalID from APPT6 where ssExternalID = &apos;&quot; + msgApptID + &quot;&apos;&quot;;
 
@@ -1100,7 +1071,7 @@ if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - s
 	var apptID = results.getString(&apos;ssExternalID&apos;);
 } else {
 	var apptID = msgApptID;
-	logger.info(&quot;appt id not in here&quot;);
+	logger.info(&quot;SIU: appt id not in here&quot;);
 }
 
 channelMap.put(&quot;Appointment ID&quot;,apptID);</script>
@@ -1341,7 +1312,20 @@ return message;</preprocessingScript>
   <postprocessingScript>// This script executes once after a message has been processed
 // Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map
 return;</postprocessingScript>
-  <deployScript>// map Webpas clinics to Titanium providers - DEN6## is for PMH and DEN7## is for PCH
+  <deployScript>// connection string, so we don&apos;t have to define it everywhere
+
+//$g(&apos;dbTitanium&apos;, DatabaseConnectionFactory.createDatabaseConnection(&apos;net.sourceforge.jtds.jdbc.Driver&apos;,&apos;jdbc:jtds:sqlserver://sparkdb05:1433/BR_PMH;&apos;,&apos;titaniumdental&apos;,&apos;!Titanium1&apos;));
+/*
+globalChannelMap.put(
+	&apos;TitaniumDB&apos;,&apos;jdbc:sqlserver://&apos; + configurationMap.get(&apos;Titanium Database Server&apos;) + 
+	&quot;;databaseName=&quot; + configurationMap.get(&apos;Titanium Database Name&apos;)
+	//+ &apos;;user=&apos; + configurationMap.get(&apos;Titanium Username&apos;) +
+	//&apos;;password=&apos; + configurationMap.get(&apos;Titanium Password&apos;)
+	);
+globalChannelMap.put(&apos;TitaniumUser&apos;,configurationMap.get(&apos;Titanium Username&apos;));
+globalChannelMap.put(&apos;TitaniumPass&apos;,configurationMap.get(&apos;Titanium Password&apos;));
+*/
+// map Webpas clinics to Titanium providers - DEN6## is for PMH and DEN7## is for PCH
 
 globalChannelMap.put(&apos;DEN650&apos;,&apos;WONGJ&apos;);&#xd;
 globalChannelMap.put(&apos;DEN651&apos;,&apos;READMANP&apos;);
@@ -1352,11 +1336,16 @@ globalChannelMap.put(&apos;DEN655&apos;,&apos;CARMICHG&apos;);
 globalChannelMap.put(&apos;DEN656&apos;,&apos;TANA&apos;);
 globalChannelMap.put(&apos;DEN657&apos;,&apos;LANDERI&apos;);
 globalChannelMap.put(&apos;DEN658&apos;,&apos;LIDDELOG&apos;);
+globalChannelMap.put(&apos;DEN659&apos;,&apos;MDCCOMBINE&apos;);
 globalChannelMap.put(&apos;DEN660&apos;,&apos;FOSTERM&apos;);
 globalChannelMap.put(&apos;DEN661&apos;,&apos;BALASUBRAR&apos;);
 globalChannelMap.put(&apos;DEN662&apos;,&apos;WHOLLEYC&apos;);
 globalChannelMap.put(&apos;DEN663&apos;,&apos;WINTERSJ&apos;);
+globalChannelMap.put(&apos;DEN664&apos;,&apos;WALKIN&apos;);
+globalChannelMap.put(&apos;DEN665&apos;,&apos;CHARTONLY&apos;);
+globalChannelMap.put(&apos;DEN666&apos;,&apos;TELEPHONE&apos;);
 globalChannelMap.put(&apos;DEN667&apos;,&apos;WILLIAMV&apos;);
+globalChannelMap.put(&apos;DEN668&apos;,&apos;REGISTRAR&apos;);
 globalChannelMap.put(&apos;DEN669&apos;,&apos;RODOREDA&apos;);
 globalChannelMap.put(&apos;DEN670&apos;,&apos;SINGERS&apos;);
 globalChannelMap.put(&apos;DEN671&apos;,&apos;CHANGF&apos;);
@@ -1373,17 +1362,21 @@ globalChannelMap.put(&apos;DEN755&apos;,&apos;CARMICHG&apos;);
 globalChannelMap.put(&apos;DEN756&apos;,&apos;TANA&apos;);
 globalChannelMap.put(&apos;DEN757&apos;,&apos;LANDERI&apos;);
 globalChannelMap.put(&apos;DEN758&apos;,&apos;LIDDELOG&apos;);
+globalChannelMap.put(&apos;DEN759&apos;,&apos;MDCCOMBINE&apos;);
 globalChannelMap.put(&apos;DEN760&apos;,&apos;FOSTERM&apos;);
 globalChannelMap.put(&apos;DEN761&apos;,&apos;BALASUBRAR&apos;);
 globalChannelMap.put(&apos;DEN762&apos;,&apos;WHOLLEYC&apos;);
 globalChannelMap.put(&apos;DEN763&apos;,&apos;WINTERSJ&apos;);
+globalChannelMap.put(&apos;DEN764&apos;,&apos;WALKIN&apos;);
+globalChannelMap.put(&apos;DEN765&apos;,&apos;CHARTONLY&apos;);
+globalChannelMap.put(&apos;DEN766&apos;,&apos;TELEPHONE&apos;);
 globalChannelMap.put(&apos;DEN767&apos;,&apos;WILLIAMV&apos;);
+globalChannelMap.put(&apos;DEN768&apos;,&apos;REGISTRAR&apos;);
 globalChannelMap.put(&apos;DEN769&apos;,&apos;RODOREDA&apos;);
 globalChannelMap.put(&apos;DEN770&apos;,&apos;SINGERS&apos;);
 globalChannelMap.put(&apos;DEN771&apos;,&apos;CHANGF&apos;);
 globalChannelMap.put(&apos;DEN772&apos;,&apos;KHADEMBAS&apos;);
 globalChannelMap.put(&apos;DEN773&apos;,&apos;WILLIAMSR&apos;);
-globalChannelMap.put(&apos;DEN774&apos;,&apos;WONGS&apos;);
 globalChannelMap.put(&apos;DEN774&apos;,&apos;WONGS&apos;);
 globalChannelMap.put(&apos;DEN775&apos;,&apos;HUANGJ&apos;);
 return;</deployScript>
@@ -1426,11 +1419,11 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1513108783073</time>
+        <time>1518577883204</time>
         <timezone>Australia/Perth</timezone>
       </lastModified>
       <pruningSettings>
-        <pruneMetaDataDays>14</pruneMetaDataDays>
+        <pruneMetaDataDays>7</pruneMetaDataDays>
         <archiveEnabled>true</archiveEnabled>
       </pruningSettings>
     </metadata>
@@ -1438,18 +1431,61 @@ return;</undeployScript>
       <codeTemplateLibrary version="3.5.1">
         <id>f83923c3-c369-46de-8d79-1e9cc08a9ef0</id>
         <name>Titanium</name>
-        <revision>1</revision>
+        <revision>2</revision>
         <lastModified>
-          <time>1512073599171</time>
+          <time>1516844362779</time>
           <timezone>Australia/Perth</timezone>
         </lastModified>
         <description>Titanium SQL functions</description>
-        <includeNewChannels>false</includeNewChannels>
+        <includeNewChannels>true</includeNewChannels>
         <enabledChannelIds>
           <string>cfe7a7bf-272f-40e7-8da6-9ec02b52582a</string>
+          <string>1f67431f-1466-4279-8c2a-9b1c13f3c470</string>
+          <string>be0fbe39-813c-436e-949f-70705fd8e084</string>
         </enabledChannelIds>
-        <disabledChannelIds/>
+        <disabledChannelIds>
+          <string>818f6e0a-17c0-485e-9d2a-e81493d70280</string>
+        </disabledChannelIds>
         <codeTemplates>
+          <codeTemplate version="3.5.1">
+            <id>207048c9-db67-4f2b-bb06-fd6bf127c425</id>
+            <name>Open database connection</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1516844362810</time>
+              <timezone>Australia/Perth</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	A function to open a database connection for use in the Titanium transformers
+	No longer used
+	@param {String} state - the state you want the connection to be in (&apos;open&apos;)
+	@return {String} returns an open database connection
+
+function ODBConn(state) {
+	if(state==&quot;open&quot;) {
+  		var dbConn = DatabaseConnectionFactory.createDatabaseConnection(
+			&apos;net.sourceforge.jtds.jdbc.Driver&apos;,
+			&apos;jdbc:jtds:sqlserver://sparkdb05:1433/BR_PMH&apos;,
+			&apos;titaniumdental&apos;,
+			&apos;!Titanium1&apos;
+		);
+  	}
+ 	return dbConn;
+}
+*/</code>
+            </properties>
+          </codeTemplate>
           <codeTemplate version="3.5.1">
             <id>38460903-b506-42c8-a9c2-adcb2632ca86</id>
             <name>SQL Query</name>
@@ -1460,11 +1496,11 @@ return;</undeployScript>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1503,11 +1539,11 @@ function SQLSelect(sql) {
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">

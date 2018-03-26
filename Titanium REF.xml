@@ -1,9 +1,9 @@
 <channel version="3.5.1">
-  <id>cfe7a7bf-272f-40e7-8da6-9ec02b52582a</id>
-  <nextMetaDataId>9</nextMetaDataId>
-  <name>Titanium SIU</name>
-  <description>Channel to processes SIU messages into Titanium appointments.</description>
-  <revision>27</revision>
+  <id>e84c9411-a906-467a-a405-61cc970319e6</id>
+  <nextMetaDataId>5</nextMetaDataId>
+  <name>Titanium REF</name>
+  <description></description>
+  <revision>9</revision>
   <sourceConnector version="3.5.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -38,7 +38,34 @@ var siteID = results.getString(&apos;lSiteID&apos;);
 channelMap.put(&quot;Site ID&quot;,siteID);</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
       </elements>
-      <inboundTemplate encoding="base64"></inboundTemplate>
+      <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTA3Xkhkd2FNZWRpY2Fs
+RmFjaWxpdHkuMDEwN15MfEVTQl5IZHdhQXBwbGljYXRpb24uRVNCXkx8MDkxN15IZHdhTWVkaWNh
+bEZhY2lsaXR5LjA5MTdeTHwyMDE4MDIxNTExMjQ0OXx8UkVGXkkxMl58MTM4MDQzNTB8RF5UfDIu
+Nnx8fEFMfE5FfEFVU3xBU0NJSXxlbl5FbmdsaXNoXklTTyA2MzktMXx8SGloSEw3djI2XzMuMV5I
+RFdBXl5MClJGMXxQXlBlbmRpbmdeSEw3MDI4M3xVXlVyZ2VudF45OU5aUHJpb3JpdHl8IiJ8fHxO
+b3QgRW50ZXJlZF5SZWZlcnJhbCBJRHwyMDE4MDIxNXx8fHwzMDA5MDgyMF53ZWJQQVMKUFJEfFJQ
+Xl53ZWJQQVN8IiIKUFJEfFJUXl53ZWJQQVN8IiIKUElEfHx8QzkzMzk5MDReXklTT15eTVJeMDEw
+N342NTY1NjU2NTY1MV5eXl5NQ34iIl5eXl5QRU5+IiJeXl5BVVNEVkFeRFZ+IiJeXl5eU05+IiJe
+Xl5eQ05+IiJeXl5eU0VOfiIiXl5eXkNNT34iIl5eXl5ORFN8fEZGRUlDVF5DQU1FUk9OXlVQR1JB
+REVeXk1zdHJeXkx8fDIwMDUwNjIxfE18RkZFSUNUXkNBTV5QQ0h+RkZFSUNUXkNBTUVST05eUENI
+SUNUfkZGRUlDVF5DQU1FUk9OXlBDSElDVCBVUEdSQURFfDReT3RoZXJeV0F8fjY3IFdBTFRFUlMg
+RFJJVkVeIiJeT1NCT1JORSBQQVJLXldBXjYwMTdeQVVTVFJBTElBXkN8fF5QUk5eUEheQ2FtQGdt
+YWlsLmNvbV5eXjkxMTExMTExfl5eQ1BeXl5eMDQzMzMzMzMzM3xeV1BOXlBIXl5eXjkyMjIyMjIy
+fDYzMDJeVmlldG5hbWVzZV5OSERELTEzMl5ZfFNeTmV2ZXIgTWFycmllZF5ITDcwMDAyfEJVRF5C
+dWRkaGlzdF53ZWJQQVN8MzAwOTA4MjB8fHwiInx8MDkwNXx8fHwiInxSRVNeUmVzaWRlbnRed2Vi
+UEFTfCIifE4KTksxfCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifCIifCIiClBWMXwxfE98IiJ8fDMwMDkwODIwfHwiInwiInwiInwxMDA0fHx8fEdFUHx8fCIi
+fHwzMDA5MDgyMHxVTkt8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHwyMDE4MDIxNQpaWFB8IiJ8MjAx
+NzEwfCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifCIifCIifFV8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8
+VXwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInxVfCIifDAKWlhW
+fHx8fHx8VVJHXjEgV2l0aGluIDMwIGRheXNed2ViUEFTfEFTU15Bc3Nlc3NtZW50XndlYlBBU3x8
+MjAxODAyMTV8fHx8fHxHRVBeR2VuZXJhbCBQcmFjdGl0aW9uZXJed2ViUEFTfHx8fHx8fHx8fHx8
+fHx8fHxZfHxUSFJeMyBNb250aHNed2ViUEFTfFBRMV5QZXJ0aCBDaGlsZHJlbidzIEhvc3BpdGFs
+XndlYlBBU3wyMDE4MDIxNXxERU5eRGVudGFsXndlYlBBU3wiInwiIn4iIn4iInxERU5eRGVudGFs
+XndlYlBBU3wyMDE4MDIxNTExMjQ0N3x8fCIifCIifCIifCIifCIifCIifHwiInx8fHx8IiJ8Q0xQ
+XkNsaWVudCBQcmVzZW50XndlYlBBUw==</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundDataType>HL7V2</inboundDataType>
       <outboundDataType>HL7V2</outboundDataType>
@@ -65,7 +92,7 @@ channelMap.put(&quot;Site ID&quot;,siteID);</script>
           <segmentDelimiter>\r</segmentDelimiter>
           <successfulACKCode>AA</successfulACKCode>
           <successfulACKMessage></successfulACKMessage>
-          <errorACKCode>AA</errorACKCode>
+          <errorACKCode>AE</errorACKCode>
           <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
           <rejectedACKCode>AR</rejectedACKCode>
           <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
@@ -123,16 +150,27 @@ channelMap.put(&quot;Site ID&quot;,siteID);</script>
     </transformer>
     <filter version="3.5.1">
       <elements>
-        <com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
-          <name>Check if dentist is in Titanium</name>
+        <com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
+          <name>Accept message if &quot;msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()&quot; equals &quot;I12&quot; or &quot;I14&quot; or &quot;I13&quot;</name>
           <sequenceNumber>0</sequenceNumber>
-          <script>if (globalChannelMap.get(msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString()) || msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString() == &quot;S15&quot;) {
-	return true;
-} else {
-	logger.info(&quot;SIU: Dentist &quot; + msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString() + &quot; not found&quot;);
-	return false;
-}</script>
-        </com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
+          <field>msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()</field>
+          <condition>EQUALS</condition>
+          <values>
+            <string>&quot;I12&quot;</string>
+            <string>&quot;I14&quot;</string>
+            <string>&quot;I13&quot;</string>
+          </values>
+        </com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
+        <com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
+          <name>Accept message if &quot;msg[&apos;ZXV&apos;][&apos;ZXV.37&apos;][&apos;ZXV.37.1&apos;].toString()&quot; equals &quot;DEN&quot;</name>
+          <sequenceNumber>1</sequenceNumber>
+          <operator>AND</operator>
+          <field>msg[&apos;ZXV&apos;][&apos;ZXV.37&apos;][&apos;ZXV.37.1&apos;].toString()</field>
+          <condition>EQUALS</condition>
+          <values>
+            <string>&quot;DEN&quot;</string>
+          </values>
+        </com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
       </elements>
     </filter>
     <transportName>Channel Reader</transportName>
@@ -142,8 +180,8 @@ channelMap.put(&quot;Site ID&quot;,siteID);</script>
   </sourceConnector>
   <destinationConnectors>
     <connector version="3.5.1">
-      <metaDataId>8</metaDataId>
-      <name>Add stub patient record for new patients</name>
+      <metaDataId>1</metaDataId>
+      <name>Add stub record for new patients</name>
       <properties class="com.mirth.connect.connectors.jdbc.DatabaseDispatcherProperties" version="3.5.1">
         <pluginProperties/>
         <destinationConnectorProperties version="3.5.1">
@@ -177,8 +215,34 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
       </properties>
       <transformer version="3.5.1">
         <elements/>
-        <inboundTemplate encoding="base64"></inboundTemplate>
-        <outboundTemplate encoding="base64"></outboundTemplate>
+        <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTA3Xkhkd2FNZWRpY2Fs
+RmFjaWxpdHkuMDEwN15MfEVTQl5IZHdhQXBwbGljYXRpb24uRVNCXkx8MDkxN15IZHdhTWVkaWNh
+bEZhY2lsaXR5LjA5MTdeTHwyMDE4MDIxNTExMjQ0OXx8UkVGXkkxMl58MTM4MDQzNTB8RF5UfDIu
+Nnx8fEFMfE5FfEFVU3xBU0NJSXxlbl5FbmdsaXNoXklTTyA2MzktMXx8SGloSEw3djI2XzMuMV5I
+RFdBXl5MClJGMXxQXlBlbmRpbmdeSEw3MDI4M3xVXlVyZ2VudF45OU5aUHJpb3JpdHl8IiJ8fHxO
+b3QgRW50ZXJlZF5SZWZlcnJhbCBJRHwyMDE4MDIxNXx8fHwzMDA5MDgyMF53ZWJQQVMKUFJEfFJQ
+Xl53ZWJQQVN8IiIKUFJEfFJUXl53ZWJQQVN8IiIKUElEfHx8QzkzMzk5MDReXklTT15eTVJeMDEw
+N342NTY1NjU2NTY1MV5eXl5NQ34iIl5eXl5QRU5+IiJeXl5BVVNEVkFeRFZ+IiJeXl5eU05+IiJe
+Xl5eQ05+IiJeXl5eU0VOfiIiXl5eXkNNT34iIl5eXl5ORFN8fEZGRUlDVF5DQU1FUk9OXlVQR1JB
+REVeXk1zdHJeXkx8fDIwMDUwNjIxfE18RkZFSUNUXkNBTV5QQ0h+RkZFSUNUXkNBTUVST05eUENI
+SUNUfkZGRUlDVF5DQU1FUk9OXlBDSElDVCBVUEdSQURFfDReT3RoZXJeV0F8fjY3IFdBTFRFUlMg
+RFJJVkVeIiJeT1NCT1JORSBQQVJLXldBXjYwMTdeQVVTVFJBTElBXkN8fF5QUk5eUEheQ2FtQGdt
+YWlsLmNvbV5eXjkxMTExMTExfl5eQ1BeXl5eMDQzMzMzMzMzM3xeV1BOXlBIXl5eXjkyMjIyMjIy
+fDYzMDJeVmlldG5hbWVzZV5OSERELTEzMl5ZfFNeTmV2ZXIgTWFycmllZF5ITDcwMDAyfEJVRF5C
+dWRkaGlzdF53ZWJQQVN8MzAwOTA4MjB8fHwiInx8MDkwNXx8fHwiInxSRVNeUmVzaWRlbnRed2Vi
+UEFTfCIifE4KTksxfCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifCIifCIiClBWMXwxfE98IiJ8fDMwMDkwODIwfHwiInwiInwiInwxMDA0fHx8fEdFUHx8fCIi
+fHwzMDA5MDgyMHxVTkt8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHwyMDE4MDIxNQpaWFB8IiJ8MjAx
+NzEwfCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifCIifCIifFV8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8
+VXwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInxVfCIifDAKWlhW
+fHx8fHx8VVJHXjEgV2l0aGluIDMwIGRheXNed2ViUEFTfEFTU15Bc3Nlc3NtZW50XndlYlBBU3x8
+MjAxODAyMTV8fHx8fHxHRVBeR2VuZXJhbCBQcmFjdGl0aW9uZXJed2ViUEFTfHx8fHx8fHx8fHx8
+fHx8fHxZfHxUSFJeMyBNb250aHNed2ViUEFTfFBRMV5QZXJ0aCBDaGlsZHJlbidzIEhvc3BpdGFs
+XndlYlBBU3wyMDE4MDIxNXxERU5eRGVudGFsXndlYlBBU3wiInwiIn4iIn4iInxERU5eRGVudGFs
+XndlYlBBU3wyMDE4MDIxNTExMjQ0N3x8fCIifCIifCIifCIifCIifCIifHwiInx8fHx8IiJ8Q0xQ
+XkNsaWVudCBQcmVzZW50XndlYlBBUwo=</inboundTemplate>
         <inboundDataType>HL7V2</inboundDataType>
         <outboundDataType>HL7V2</outboundDataType>
         <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
@@ -346,21 +410,28 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
       <filter version="3.5.1">
         <elements>
           <com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
-            <name>Accept message if &quot;msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()&quot; equals &quot;S12&quot;</name>
+            <name>Accept message if &quot;msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()&quot; equals &quot;I12&quot; or &quot;I13&quot;</name>
             <sequenceNumber>0</sequenceNumber>
             <field>msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()</field>
             <condition>EQUALS</condition>
             <values>
-              <string>&quot;S12&quot;</string>
+              <string>&quot;I12&quot;</string>
+              <string>&quot;I13&quot;</string>
             </values>
           </com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
           <com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
-            <name>Find if patient already exists</name>
+            <name>Check if patient already exists</name>
             <sequenceNumber>1</sequenceNumber>
             <operator>AND</operator>
-            <script>// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {&#xd;		var patientid = child[&apos;PID.3.1&apos;].toString();&#xd;	}&#xd;}&#xd;&#xd;logger.info(&quot;SIU: Patient ID = &quot; + patientid);&#xd;&#xd;//SQL to get the RecordNum&#xd;var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos; and deleted = 0&quot;;&#xd;&#xd;var results = SQLSelect(sql);&#xd;&#xd;if (results.size() == 0) {&#xd;	logger.info(&quot;SIU: No such patient &quot; + patientid.toString() + &quot;, adding...&quot;);&#xd;	// Get the next recordnum for a new Debtor4 record&#xd;	var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;DEBTOR4&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;&#xd;	var results = SQLSelect(sql);&#xd;	results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1&#xd;	var nextRecordNum = results.getString(1);&#xd;	logger.info(&quot;SIU: NextDebtorRecordNum = &quot; + nextRecordNum);&#xd;	channelMap.put(&apos;Next Debtor Record Number&apos;,nextRecordNum);&#xd;	var patientRN = nextRecordNum;
-	logger.info(&quot;SIU: Patient RecordNum = &quot; + patientRN);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());&#xd;	return true;&#xd;} else {&#xd;	results.next(); // The ResultSet starts at row 0 - so we advance to row 1&#xd;	var patientRN = results.getString(&apos;RecordNum&apos;);
-	logger.info(&quot;SIU: Patient Recordnum &quot; + patientRN + &quot; already exists&quot;);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());
+            <script>// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.3&apos;].toString() == &apos;ISO&apos;) {&#xd;		var patientid = child[&apos;PID.3.1&apos;].toString();
+	}
+}
+if (!patientid) {
+	logger.info(&apos;REF: HDWA Patient ID not found&apos;);
+	return false;&#xd;}
+&#xd;logger.info(&quot;REF: Patient ID = &quot; + patientid);&#xd;&#xd;//SQL to get the RecordNum&#xd;var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos; and deleted = 0&quot;;&#xd;&#xd;var results = SQLSelect(sql);&#xd;&#xd;if (results.size() == 0) {&#xd;	logger.info(&quot;REF: No such patient &quot; + patientid.toString() + &quot;, adding...&quot;);&#xd;	// Get the next recordnum for a new Debtor4 record&#xd;	var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;DEBTOR4&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;&#xd;	var results = SQLSelect(sql);&#xd;	results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1&#xd;	var nextRecordNum = results.getString(1);&#xd;	logger.info(&quot;REF: NextDebtorRecordNum = &quot; + nextRecordNum);&#xd;	channelMap.put(&apos;Next Debtor Record Number&apos;,nextRecordNum);&#xd;	var patientRN = nextRecordNum;
+	logger.info(&quot;REF: Patient RecordNum = &quot; + patientRN);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());&#xd;	return true;&#xd;} else {&#xd;	results.next(); // The ResultSet starts at row 0 - so we advance to row 1&#xd;	var patientRN = results.getString(&apos;RecordNum&apos;);
+	logger.info(&quot;REF: Patient Recordnum &quot; + patientRN + &quot; already exists&quot;);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());
 	return false;&#xd;}</script>
           </com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
         </elements>
@@ -371,8 +442,8 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
       <waitForPrevious>true</waitForPrevious>
     </connector>
     <connector version="3.5.1">
-      <metaDataId>7</metaDataId>
-      <name>Send to Titanium HL7 (to add remaining patient data)</name>
+      <metaDataId>2</metaDataId>
+      <name>Send to Titanium to add remaining details</name>
       <properties class="com.mirth.connect.connectors.tcp.TcpDispatcherProperties" version="3.5.1">
         <pluginProperties/>
         <destinationConnectorProperties version="3.5.1">
@@ -404,7 +475,7 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
           <nackBytes>15</nackBytes>
           <maxRetries>2</maxRetries>
         </transmissionModeProperties>
-        <remoteAddress>wsio123app.hdwa.health.wa.gov.au</remoteAddress>
+        <remoteAddress>WSIO124APP.hdwa.health.wa.gov.au</remoteAddress>
         <remotePort>17000</remotePort>
         <overrideLocalBinding>false</overrideLocalBinding>
         <localAddress>0.0.0.0</localAddress>
@@ -413,7 +484,7 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
         <bufferSize>65536</bufferSize>
         <keepConnectionOpen>false</keepConnectionOpen>
         <checkRemoteHost>false</checkRemoteHost>
-        <responseTimeout>10000</responseTimeout>
+        <responseTimeout>5000</responseTimeout>
         <ignoreResponse>false</ignoreResponse>
         <queueOnResponseTimeout>true</queueOnResponseTimeout>
         <dataTypeBinary>false</dataTypeBinary>
@@ -427,30 +498,39 @@ values (${maps.get(&apos;Patient RecordNum&apos;)}, ${maps.get(&apos;Patient cod
             <sequenceNumber>0</sequenceNumber>
             <script>msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.1&apos;] = &apos;ADT&apos;;
 msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;] = &apos;A08&apos;;
-msg[&apos;MSH&apos;][&apos;MSH.12&apos;][&apos;MSH.12.1&apos;] = &apos;2.6&apos;;</script>
+msg[&apos;MSH&apos;][&apos;MSH.12&apos;][&apos;MSH.12.1&apos;] = &apos;2.6&apos;;
+var i = 0;
+// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.3&apos;].toString() == &apos;ISO&apos;) {&#xd;		msg[&apos;PID&apos;][&apos;PID.3&apos;][i][&apos;PID.3.4&apos;] = &apos;HDWA&apos;;
+	}
+	i++;
+}</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
         </elements>
-        <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTAzXkhkd2FNZWRpY2Fs
-RmFjaWxpdHkuMDEwM15MfHwwOTE3fDIwMTcwMjI3MTMzODE4fHxTSVVeUzEyXlNJVV9TMTJ8fFB8
-Mi40fHx8QUx8TkV8fEFTQ0lJClNDSHxNUEAzMDA4MDMwOHx8fHx8QUReQWRkfFJPVVRJTkVeUm91
-dGluZXx8MTB8TXx8fHx8fHx8fHx8fHx8fEJvb2tlZApQSUR8MXx8MTIzNDU2NzheXl5IRFdBXk1S
-XjA5MTdeXn4iIl5eXkFVU0hJQ15NQ14wOTE3Xl5+IiJeXl5BVVNISUNeUEVOXjA5MTdeXn4iIl5e
-XkFVU0RWQV5EVlVeMDkxN15efiIiXl5eQVVTSElDXlNORVReMDkxN15efiIiXl5eXl4wOTE3Xl5+
-IiJeXl5eXjA5MTdeXn4iIl5eXl5eMDkxN15efHxISE1NTVBIXlBISUxJUF5eXk1JU1NeXkx8fDIw
-MDUwMTEwfEZ8fDReTmVpdGhlciBBYm9yaWdpbmFsIG5vciBUU0leSGloSEw3djI2LkFib3JpZ2lu
-YWxpdHlDb2Rlc140Xk90aGVyXldlYnBhc0hMN3YyMzEuQWJvcmlnaW5hbGl0eUNvZGVzXjEuMC4w
-XjEuMC4wXk90aGVyfDY3IFdBTFRFUlMgRFJJVkVeXk9TQk9STkUgUEFSS15XQV42MDE3XkFVU15V
-Xl5eXl5eXl5eTl5OfHxeUF5NXjA0MTI0NTY3NTNeXl5eXl5eXl4yMDE3MDIyMzEzNTUxM3x8IiJ8
-U15ORVZFUl9NQVJSSUVEXkhpaEhMN3YyNi5NYXJpdGFsU3RhdHVzQ29kZXNeU15TaW5nbGVeV2Vi
-cGFzSEw3djIzMS5NYXJpdGFsU3RhdHVzQ29kZXNeMS4wLjBeMS4wLjBeTmV2ZXIgTWFycmllZHwi
-InxQTUAzMDA4MDMwOF5eXkhEV0FeVk5eMDkxN3x8fHx8MDkwNXx8fHx8fCIiClBWMXx8T3x8fHx8
-fFdlYnBhcy42MDI4MzheU01FQVRPTl5NSUNIQUVMXl5eRFJeXndlYlBBU15IRFdBXkxeXl5ETl4w
-OTE3fHxHRVN8fHx8fHx8fHxQTUAzMDA4MDMwOF5eXkhEV0FeVk5eMDkxN3xQVUJeXlBVQkxJQ15I
-aWhITDd2MjYuRmluYW5jaWFsQ2xhc3NDb2Rlc15QVUJeUHVibGljXldlYnBhc0hMN3YyMzEuRmlu
-YW5jaWFsQ2xhc3NDb2Rlc14xLjAuMF4xLjAuMF58fHx8fHx8fHx8fHx8fHx8fHx8MDEwM3x8fEdF
-UzY1MF5eXjAxMDMmSGR3YU1lZGljYWxGYWNpbGl0eS4wMTAzJkxeXkNeXl5HRVM2NTAgTXIgQyBL
-aWtpcm9zXl5IRFdBfHwyMDE3MDMwMjE0MjAwMHwKUkdTfDEKQUlMfDF8QXx8fHwyMDE3MDMwMjE0
-MjAwMHx8fDEwfE18fEJvb2tlZAo=</inboundTemplate>
+        <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTA3Xkhkd2FNZWRpY2Fs
+RmFjaWxpdHkuMDEwN15MfEVTQl5IZHdhQXBwbGljYXRpb24uRVNCXkx8MDkxN15IZHdhTWVkaWNh
+bEZhY2lsaXR5LjA5MTdeTHwyMDE4MDIyMDE1MzExOXx8UkVGXkkxM15SRUZfSTEyfDEzODA1ODE0
+fEReVHwyLjZ8fHxBTHxORXxBVVN8QVNDSUl8ZW5eRW5nbGlzaF5JU08gNjM5LTF8fEhpaEhMN3Yy
+Nl8zLjFeSERXQV5eTApSRjF8QV5BY2NlcHRlZF5ITDcwMjgzfFJeUm91dGluZV45OU5aUHJpb3Jp
+dHl8IiJ8fHxOb3QgRW50ZXJlZF5SZWZlcnJhbCBJRHwyMDE4MDIyMHx8fHwzMDA5MTA1N153ZWJQ
+QVMKUFJEfFJQXl53ZWJQQVN8IiIKUFJEfFJUXl53ZWJQQVN8IiIKUElEfHx8SDU5MDE4MzdeXklT
+T15eTVJeMDEwN34iIl5eXl5NQ34iIl5eXl5QRU5+IiJeXl5BVVNEVkFeRFZ+IiJeXl5eU05+IiJe
+Xl5eQ05+IiJeXl5eU0VOfiIiXl5eXkNNT34iIl5eXl5ORFN8fEhRMjFeVklOT1RIXiIiXl5Ncl5e
+THx8MTk5MDEwMTV8TXwiInw0Xk90aGVyXldBfH42NyBXQUxURVJTIERSSVZFXiIiXk9TQk9STkUg
+UEFSS14iIl42MDE3XkFVU1RSQUxJQV5DfHxeUFJOXlBIXiIiXl5eIiJ+Xl5DUF5eXl4iInxeV1BO
+XlBIXl5eXiIifCIiXl5eTnxNXk1hcnJpZWReSEw3MDAwMnwiInwzMDA5MTA1N3x8fCIifHwwOTA1
+fHx8fCIifE5TVF5Ob3Qgc3RhdGVkXndlYlBBU3wiInxOCk5LMXwiInwiInwiInwiInwiInwiInwi
+InwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwi
+InwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiIgpQVjF8MXxPfCIifHwzMDA5MTA1N3x8
+IiJ8IiJ8IiJ8MjAxNXx8fHxBTkl8fHwiInx8MzAwOTEwNTd8QkJEfHx8fHx8fHx8fHx8fHx8fHx8
+fHx8fHx8MjAxODAyMjAKWlhQfCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifFV8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8
+IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8VXwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwi
+InwiInwiInwiInxVfCIifDAKWlhWfHx8fHx8TlVSXjMgV2l0aGluIDkxIDM2NSBkYXlzXndlYlBB
+U3xFRFVeRWR1Y2F0aW9uXndlYlBBU3x8MjAxODAyMjB8fHx8fHxBTkleQW5vdGhlciBJbnN0aXR1
+dGlvbl53ZWJQQVN8fHx8fHx8fHx8fHx8fHx8fE58fElORF5JbmRlZmluaXRlXndlYlBBU3xQUTFe
+UGVydGggQ2hpbGRyZW4ncyBIb3NwaXRhbF53ZWJQQVN8MjAxODAyMjB8REVOXk5ldXJvbG9neV53
+ZWJQQVN8IiJ8IiJ+IiJ+IiJ8TkVVXk5ldXJvbG9neV53ZWJQQVN8MjAxODAyMjAxNTMxMTd8fHwi
+InwiInwiInwiInwiInwiInx8IiJ8fHx8fCIifCIiCg==</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundDataType>HL7V2</inboundDataType>
         <outboundDataType>HL7V2</outboundDataType>
@@ -619,19 +699,9 @@ MjAwMHx8fDEwfE18fEJvb2tlZAo=</inboundTemplate>
       <filter version="3.5.1">
         <elements>
           <com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
-            <name>Accept message if &quot;msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()&quot; equals &quot;S12&quot;</name>
+            <name>Accept message if &quot;$(&apos;d1&apos;).getStatus()&quot; equals &quot;SENT&quot;</name>
             <sequenceNumber>0</sequenceNumber>
-            <field>msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()</field>
-            <condition>EQUALS</condition>
-            <values>
-              <string>&quot;S12&quot;</string>
-            </values>
-          </com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
-          <com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
-            <name>Accept message if &quot;$(&apos;d8&apos;).getStatus()&quot; equals &quot;SENT&quot;</name>
-            <sequenceNumber>1</sequenceNumber>
-            <operator>AND</operator>
-            <field>$(&apos;d8&apos;).getStatus()</field>
+            <field>$(&apos;d1&apos;).getStatus()</field>
             <condition>EQUALS</condition>
             <values>
               <string>&quot;SENT&quot;</string>
@@ -645,414 +715,8 @@ MjAwMHx8fDEwfE18fEJvb2tlZAo=</inboundTemplate>
       <waitForPrevious>true</waitForPrevious>
     </connector>
     <connector version="3.5.1">
-      <metaDataId>1</metaDataId>
-      <name>Add appointment (S12)</name>
-      <properties class="com.mirth.connect.connectors.jdbc.DatabaseDispatcherProperties" version="3.5.1">
-        <pluginProperties/>
-        <destinationConnectorProperties version="3.5.1">
-          <queueEnabled>false</queueEnabled>
-          <sendFirst>false</sendFirst>
-          <retryIntervalMillis>10000</retryIntervalMillis>
-          <regenerateTemplate>false</regenerateTemplate>
-          <retryCount>0</retryCount>
-          <rotate>false</rotate>
-          <includeFilterTransformer>false</includeFilterTransformer>
-          <threadCount>1</threadCount>
-          <threadAssignmentVariable></threadAssignmentVariable>
-          <validateResponse>false</validateResponse>
-          <resourceIds class="linked-hash-map">
-            <entry>
-              <string>Default Resource</string>
-              <string>[Default Resource]</string>
-            </entry>
-          </resourceIds>
-          <queueBufferSize>1000</queueBufferSize>
-          <reattachAttachments>true</reattachAttachments>
-        </destinationConnectorProperties>
-        <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
-        <url>${maps.get(&apos;TitaniumDB&apos;)}</url>
-        <username>Titaniumdental</username>
-        <password>!Titanium1</password>
-        <query>MERGE APPT6 as [Target]
-USING (SELECT
-${maps.get(&apos;Appointment ID&apos;)} as apptid, 
-${maps.get(&apos;Patient RecordNum&apos;)} as ptid, 
-CAST(${maps.get(&apos;Appointment Date&apos;)} as Date) as date,  + CAST (${maps.get(&apos;Appointment Time&apos;)} as Datetime) as time, 
-${maps.get(&apos;Doctor ID&apos;)} as dentist, 
-${maps.get(&apos;Appointment Length&apos;)} as ulength,
-&apos;1&apos; as wstatus, 
-${maps.get(&apos;Appointment UID&apos;)} as uidapptid,
-${Room} as room,
-CAST(${maps.get(&apos;Current Date&apos;)} as Date) as CreatedDate,
-CAST(${maps.get(&apos;Current Time&apos;)} as Datetime) as CreatedTime,
-CAST(${maps.get(&apos;Current Date&apos;)} as Date) as UpdatedDate,
-CAST(${maps.get(&apos;Current Time&apos;)} as Datetime) as UpdatedTime,
-&apos;PCH&apos; as clinicCode
-) as [Source]
-on [Target].ssExternalID = [Source].apptid
-when matched then update set
-[Target].ridPatient = [Source].ptid,
-[Target].dtDate = [Source].date,
-[Target].tmTime = [Source].time,
-[Target].dentist = [Source].dentist,
-[Target].ulength = [Source].ulength,
-[Target].wstatus = [Source].wstatus,
-[Target].room = [Source].room,
-[Target].UpdatedDate = [Source].UpdatedDate,
-[Target].UpdatedTime = [Source].UpdatedTime
-when not matched then insert 
-(RecordNum,siteid, ssExternalID,ridPatient,dtDate,tmtime,dentist,ulength,wstatus,uidapptid,room,createddate,createdtime,updateddate,updatedtime,clinicCode)
-values (${maps.get(&apos;Appointment RecordNum&apos;)},${maps.get(&apos;Site ID&apos;)},[source].apptid, [source].ptid, [source].date, [source].time, [source].dentist
-,[source].ulength,[source].wstatus,[source].uidapptid,[source].room,[Source].CreatedDate,[Source].CreatedTime,[source].updateddate,[source].updatedtime,&apos;PCH&apos;)
-;</query>
-        <useScript>false</useScript>
-      </properties>
-      <transformer version="3.5.1">
-        <elements>
-          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>Get NextRecordNum from FileInfo</name>
-            <sequenceNumber>0</sequenceNumber>
-            <script>var sql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;APPT6&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;
-
-var results = SQLSelect(sql);
-
-results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-
-var nextRecordNum = results.getString(1);
-logger.info(&quot;SIU: NextRecordNum = &quot; + nextRecordNum);
-
-channelMap.put(&apos;Next Record Number&apos;,nextRecordNum);</script>
-          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>Check if ExternalID/Appointment ID exists</name>
-            <sequenceNumber>1</sequenceNumber>
-            <script>var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
-logger.info(&quot;SIU: External ID from message = &quot; + msgApptID );
-
-var sql = &quot;SELECT recordnum,ssExternalID from APPT6 where ssExternalID = &apos;&quot; + msgApptID + &quot;&apos;&quot;;
-
-var results = SQLSelect(sql);
-
-if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-	var apptID = results.getString(&apos;ssExternalID&apos;); // the appointment already exists in the DB
-	var recordNum = results.getString(&apos;RecordNum&apos;);
-	channelMap.put(&quot;Appointment ID&quot;,apptID);
-	channelMap.put(&quot;Appointment RecordNum&quot;,recordNum);
-} else { // the appointment doesn&apos;t exist - a new one must be created
-	var apptID = msgApptID;
-	var nextsql = &quot;declare @r varchar(25);exec spSpark_GetNextRecordNum &apos;APPT6&apos;,@recordnum = @r output;select @r as nextRecordNum;&quot;;
-	var nextresults = SQLSelect(nextsql);
-	nextresults.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-	var nextRecordNum = nextresults.getString(&apos;nextRecordNum&apos;);
-	logger.info(&quot;SIU: NextRecordNum = &quot; + nextRecordNum);
-	channelMap.put(&quot;Appointment RecordNum&quot;,nextRecordNum);
-	channelMap.put(&quot;Appointment ID&quot;,apptID);
-}</script>
-          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Doctor ID</name>
-            <sequenceNumber>2</sequenceNumber>
-            <variable>Doctor ID</variable>
-            <mapping>globalChannelMap.get(msg[&apos;PV1&apos;][&apos;PV1.42&apos;][&apos;PV1.42.1&apos;].toString())</mapping>
-            <defaultValue></defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Appointment Date</name>
-            <sequenceNumber>3</sequenceNumber>
-            <variable>Appointment Date</variable>
-            <mapping>DateUtil.convertDate(&quot;yyyyMMdd&quot;,&quot;yyyy-MM-dd&quot;,msg[&apos;AIL&apos;][&apos;AIL.6&apos;][&apos;AIL.6.1&apos;].toString().substring(0,8))</mapping>
-            <defaultValue></defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Appointment Time</name>
-            <sequenceNumber>4</sequenceNumber>
-            <variable>Appointment Time</variable>
-            <mapping>&quot;1899-12-30 &quot; + msg[&apos;AIL&apos;][&apos;AIL.6&apos;][&apos;AIL.6.1&apos;].toString().substring(8,10) + &quot;:&quot; + msg[&apos;AIL&apos;][&apos;AIL.6&apos;][&apos;AIL.6.1&apos;].toString().substring(10,12) + &quot;:00&quot;</mapping>
-            <defaultValue></defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Appointment Length</name>
-            <sequenceNumber>5</sequenceNumber>
-            <variable>Appointment Length</variable>
-            <mapping>msg[&apos;SCH&apos;][&apos;SCH.9&apos;][&apos;SCH.9.1&apos;].toString()</mapping>
-            <defaultValue></defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
-          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>Get next Appointment UID</name>
-            <sequenceNumber>6</sequenceNumber>
-            <script>var sql = &quot;declare @r varchar(25);exec spSpark_GetNextUID &apos;1059&apos;,@recordnum = @r output;select @r as nextUID;&quot;;
-
-var results = SQLSelect(sql);
-
-results.next(); // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-
-var apptUID = results.getString(&apos;nextUID&apos;);
-
-logger.info(&quot;SIU: Appointment UID = &quot; + apptUID);
-
-channelMap.put(&apos;Appointment UID&apos;, apptUID);</script>
-          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>Get room</name>
-            <sequenceNumber>7</sequenceNumber>
-            <script>// Gets the room name that the dentist&apos;s roster is in from the BLOCK6 table 
-var sql = &quot;with roster as (select dateadd(minute, wstarttime,dtdate) as starttm,dateadd(minute,wLength,dateadd(minute, wstarttime,dtdate)) as endtm,*&quot; +
-&quot;from block6 where dtdate = &apos;&quot; + $(&apos;Appointment Date&apos;) + &quot;&apos; and wtype = 3 and providercode = &apos;&quot; + $(&apos;Doctor ID&apos;) + &quot;&apos;) &quot; + 
-&quot;select room from roster where cast(&apos;&quot; + $(&apos;Appointment Date&apos;) + &quot;&apos; as datetime) + cast(&apos;&quot; + $(&apos;Appointment Time&apos;) + &quot;&apos; as time) between starttm and endtm;&quot;
-
-var results = SQLSelect(sql);
-if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-	var room = results.getString(&apos;room&apos;);
-} else {
-	var room = &quot;&quot;;
-}
-
-channelMap.put(&quot;Room&quot;,room);
-logger.info(&quot;SIU: Room = &quot; + room.toString());</script>
-          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Current Date</name>
-            <sequenceNumber>8</sequenceNumber>
-            <variable>Current Date</variable>
-            <mapping>DateUtil.getCurrentDate(&apos;yyyy-MM-dd&apos;)</mapping>
-            <defaultValue>DateUtil.getCurrentDate(&apos;yyyy-MM-dd&apos;)</defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Current Time</name>
-            <sequenceNumber>9</sequenceNumber>
-            <variable>Current Time</variable>
-            <mapping>&quot;1899-12-30 &quot; + DateUtil.getCurrentDate(&apos;HH:mm:ss&apos;)</mapping>
-            <defaultValue>&quot;1899-12-30 &quot; + DateUtil.getCurrentDate(&apos;HH:mm:ss&apos;)</defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
-        </elements>
-        <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTA3Xkhkd2FNZWRpY2Fs
-RmFjaWxpdHkuMDEwN15MfHwwOTE3fDIwMTcwNDI4MTQxODU2fHxTSVVeUzEyXlNJVV9TMTJ8fFB8
-Mi42fHx8QUx8TkV8fEFTQ0lJDVNDSHxQUUAzMDA4MTkxNnx8fHx8QUReQWRkfFJPVVRJTkVeUm91
-dGluZXx8MTB8TXx8fHx8fHx8fHx8fHx8fEJvb2tlZA1QSUR8MXx8RDU5MDA5MDleXl5IRFdBXk1S
-XjA5MTdeXn42NTY1NjU2NTY1MV5eXkFVU0hJQ15NQ14wOTE3Xl4yMDIwMDl+NjAzNDIxMzIzVF5e
-XkFVU0hJQ15QRU5eMDkxN15eMjAyMDA5MjN+V1gxMjMxNDVeXl5BVVNEVkFeRFZHXjA5MTdeXjIw
-MjAwOTIxflNOMzAyNzI0NTYzXl5eQVVTSElDXlNORVReMDkxN15eMjAxODA5MjF+IiJeXl5eXjA5
-MTdeXn4iIl5eXl5eMDkxN15efiIiXl5eXl4wOTE3Xl58fEZGRUlDVF5ERU5UQUwxXkFORFleXk1T
-VFJeXkx8fDIwMDEwMjE2fE18fDReTmVpdGhlciBBYm9yaWdpbmFsIG5vciBUU0leSGloSEw3djI2
-LkFib3JpZ2luYWxpdHlDb2Rlc140Xk90aGVyXldlYnBhc0hMN3YyMzEuQWJvcmlnaW5hbGl0eUNv
-ZGVzXjEuMC4wXjEuMC4wXk90aGVyfDY3IFdBTFRFUlMgRFJJVkVeXk9TQk9STkUgUEFSS15XQV42
-MDE3XkFVU15SXl5eXl5eXl5eTl5OfHxeUF5UXjkxMTExMTExXl5eXl5eXl5eMjAxNzA0MjgxMTE1
-MTV+XlBeRV5kZW50YWwxQGdtYWlsLmNvbV5eXl5eXl5eXjIwMTcwNDI4MTExNTE1fl5QXk1eMDQw
-MzMzMzMzM15eXl5eXl5eXjIwMTcwNDI4MTExNTE1fF5CXlReOTIyMjIyMjJeXl5eXl5eXl4yMDE3
-MDQyODExMTUxNXw2NTE0XkJhbGluZXNlXkhpaEhMN3YyNi5MYW5ndWFnZUNvZGVzXjY1MTReQmFs
-aW5lc2VeV2VicGFzSEw3djIzMS5MYW5ndWFnZUNvZGVzXjEuMC4wXjEuMC4wXkJhbGluZXNlfFNe
-TkVWRVJfTUFSUklFRF5IaWhITDd2MjYuTWFyaXRhbFN0YXR1c0NvZGVzXlNeU2luZ2xlXldlYnBh
-c0hMN3YyMzEuTWFyaXRhbFN0YXR1c0NvZGVzXjEuMC4wXjEuMC4wXk5ldmVyIE1hcnJpZWR8QlVE
-XkJ1ZGRoaXN0XkhpaEhMN3YyNi5SZWxpZ2lvbkNvZGVzXkJVRF5CdWRkaGlzdF5XZWJwYXNITDd2
-MjMxLlJlbGlnaW9uQ29kZXNeMS4wLjBeMS4wLjBeQnVkZGhpc3R8UFFAMzAwODE5MTZeXl5IRFdB
-XlZOXjA5MTd8fHx8fDA5MDV8fHx8fHwiIg1QVjF8fE98fHx8fHxXZWJwYXMuNjAwNTA5Xk5HVVlF
-Tl5USFVZXl5eRFJeXndlYlBBU15IRFdBXkxeXl5ETl4wOTE3fDUyMDAwM15ERU5UQUxeUENIXl5e
-RFJeXndlYlBBU15IRFdBXkxeXl5ETl4wOTE3fERFTnx8fHx8fHx8fFBRQDMwMDgxOTE2Xl5eSERX
-QV5WTl4wOTE3fFBWVF5eUFJJVkFURSBJTlNVUkVEXkhpaEhMN3YyNi5GaW5hbmNpYWxDbGFzc0Nv
-ZGVzXlBWVF5Qcml2YXRlIEluc3VyZWReV2VicGFzSEw3djIzMS5GaW5hbmNpYWxDbGFzc0NvZGVz
-XjEuMC4wXjEuMC4wXnx8fHx8fHx8fHx8fHx8fHx8fHwwMTA3fHx8REVONzc0Xl5eMDEwNyZIZHdh
-TWVkaWNhbEZhY2lsaXR5LjAxMDcmTF5eQ15eXkRyIFBDSCBERU5UQUxeXkhEV0F8fDIwMTcwNTAy
-MDgwMDAwfA1SR1N8MQ1BSUx8MXxBfHx8fDIwMTcwNTAyMDgwMDAwfHx8MTB8TXx8Qm9va2Vk</inboundTemplate>
-        <outboundTemplate encoding="base64"></outboundTemplate>
-        <inboundDataType>HL7V2</inboundDataType>
-        <outboundDataType>HL7V2</outboundDataType>
-        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
-            <handleRepetitions>true</handleRepetitions>
-            <handleSubcomponents>true</handleSubcomponents>
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <stripNamespaces>true</stripNamespaces>
-            <segmentDelimiter>\r</segmentDelimiter>
-            <convertLineBreaks>true</convertLineBreaks>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <segmentDelimiter>\r</segmentDelimiter>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
-            <splitType>MSH_Segment</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
-            <segmentDelimiter>\r</segmentDelimiter>
-            <successfulACKCode>AA</successfulACKCode>
-            <successfulACKMessage></successfulACKMessage>
-            <errorACKCode>AE</errorACKCode>
-            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
-            <rejectedACKCode>AR</rejectedACKCode>
-            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
-            <msh15ACKAccept>false</msh15ACKAccept>
-            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
-          </responseGenerationProperties>
-          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
-            <successfulACKCode>AA,CA</successfulACKCode>
-            <errorACKCode>AE,CE</errorACKCode>
-            <rejectedACKCode>AR,CR</rejectedACKCode>
-            <validateMessageControlId>true</validateMessageControlId>
-            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
-            <originalIdMapVariable></originalIdMapVariable>
-          </responseValidationProperties>
-        </inboundProperties>
-        <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
-            <handleRepetitions>true</handleRepetitions>
-            <handleSubcomponents>true</handleSubcomponents>
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <stripNamespaces>true</stripNamespaces>
-            <segmentDelimiter>\r</segmentDelimiter>
-            <convertLineBreaks>true</convertLineBreaks>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <segmentDelimiter>\r</segmentDelimiter>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
-            <splitType>MSH_Segment</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
-            <segmentDelimiter>\r</segmentDelimiter>
-            <successfulACKCode>AA</successfulACKCode>
-            <successfulACKMessage></successfulACKMessage>
-            <errorACKCode>AE</errorACKCode>
-            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
-            <rejectedACKCode>AR</rejectedACKCode>
-            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
-            <msh15ACKAccept>false</msh15ACKAccept>
-            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
-          </responseGenerationProperties>
-          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
-            <successfulACKCode>AA,CA</successfulACKCode>
-            <errorACKCode>AE,CE</errorACKCode>
-            <rejectedACKCode>AR,CR</rejectedACKCode>
-            <validateMessageControlId>true</validateMessageControlId>
-            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
-            <originalIdMapVariable></originalIdMapVariable>
-          </responseValidationProperties>
-        </outboundProperties>
-      </transformer>
-      <responseTransformer version="3.5.1">
-        <elements/>
-        <inboundTemplate encoding="base64"></inboundTemplate>
-        <outboundTemplate encoding="base64"></outboundTemplate>
-        <inboundDataType>HL7V2</inboundDataType>
-        <outboundDataType>HL7V2</outboundDataType>
-        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
-            <handleRepetitions>true</handleRepetitions>
-            <handleSubcomponents>true</handleSubcomponents>
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <stripNamespaces>true</stripNamespaces>
-            <segmentDelimiter>\r</segmentDelimiter>
-            <convertLineBreaks>true</convertLineBreaks>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <segmentDelimiter>\r</segmentDelimiter>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
-            <splitType>MSH_Segment</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
-            <segmentDelimiter>\r</segmentDelimiter>
-            <successfulACKCode>AA</successfulACKCode>
-            <successfulACKMessage></successfulACKMessage>
-            <errorACKCode>AE</errorACKCode>
-            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
-            <rejectedACKCode>AR</rejectedACKCode>
-            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
-            <msh15ACKAccept>false</msh15ACKAccept>
-            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
-          </responseGenerationProperties>
-          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
-            <successfulACKCode>AA,CA</successfulACKCode>
-            <errorACKCode>AE,CE</errorACKCode>
-            <rejectedACKCode>AR,CR</rejectedACKCode>
-            <validateMessageControlId>true</validateMessageControlId>
-            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
-            <originalIdMapVariable></originalIdMapVariable>
-          </responseValidationProperties>
-        </inboundProperties>
-        <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
-            <handleRepetitions>true</handleRepetitions>
-            <handleSubcomponents>true</handleSubcomponents>
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <stripNamespaces>true</stripNamespaces>
-            <segmentDelimiter>\r</segmentDelimiter>
-            <convertLineBreaks>true</convertLineBreaks>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <segmentDelimiter>\r</segmentDelimiter>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
-            <splitType>MSH_Segment</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
-            <segmentDelimiter>\r</segmentDelimiter>
-            <successfulACKCode>AA</successfulACKCode>
-            <successfulACKMessage></successfulACKMessage>
-            <errorACKCode>AE</errorACKCode>
-            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
-            <rejectedACKCode>AR</rejectedACKCode>
-            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
-            <msh15ACKAccept>false</msh15ACKAccept>
-            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
-          </responseGenerationProperties>
-          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
-            <successfulACKCode>AA,CA</successfulACKCode>
-            <errorACKCode>AE,CE</errorACKCode>
-            <rejectedACKCode>AR,CR</rejectedACKCode>
-            <validateMessageControlId>true</validateMessageControlId>
-            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
-            <originalIdMapVariable></originalIdMapVariable>
-          </responseValidationProperties>
-        </outboundProperties>
-      </responseTransformer>
-      <filter version="3.5.1">
-        <elements>
-          <com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
-            <name>Accept message if &quot;msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()&quot; equals &quot;S12&quot;</name>
-            <sequenceNumber>0</sequenceNumber>
-            <field>msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()</field>
-            <condition>EQUALS</condition>
-            <values>
-              <string>&quot;S12&quot;</string>
-            </values>
-          </com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
-        </elements>
-      </filter>
-      <transportName>Database Writer</transportName>
-      <mode>DESTINATION</mode>
-      <enabled>true</enabled>
-      <waitForPrevious>true</waitForPrevious>
-    </connector>
-    <connector version="3.5.1">
       <metaDataId>3</metaDataId>
-      <name>Cancel Appointment (S15)</name>
+      <name>Remove patient if no booking</name>
       <properties class="com.mirth.connect.connectors.jdbc.DatabaseDispatcherProperties" version="3.5.1">
         <pluginProperties/>
         <destinationConnectorProperties version="3.5.1">
@@ -1079,81 +743,64 @@ MDgwMDAwfA1SR1N8MQ1BSUx8MXxBfHx8fDIwMTcwNTAyMDgwMDAwfHx8MTB8TXx8Qm9va2Vk</inboun
         <url>${maps.get(&apos;TitaniumDB&apos;)}</url>
         <username>TitaniumDental</username>
         <password>!Titanium1</password>
-        <query>UPDATE APPT6
-SET wStatus = 7, 
-UpdatedDate = CAST(${maps.get(&apos;Current Date&apos;)} as Date),
-UpdatedTime = CAST(${maps.get(&apos;Current Time&apos;)} as Datetime)
-WHERE ssExternalID = ${maps.get(&apos;Appointment ID&apos;)}</query>
+        <query>UPDATE DEBTOR4
+SET deleted = ${PatientDeleted}
+WHERE RecordNum = ${maps.get(&apos;Patient RecordNum&apos;)}</query>
         <useScript>false</useScript>
       </properties>
       <transformer version="3.5.1">
         <elements>
           <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-            <name>Check if ExternalID/Appointment ID exists</name>
+            <name>Create refresh patient cache URL</name>
             <sequenceNumber>0</sequenceNumber>
-            <script>var msgApptID = msg[&apos;SCH&apos;][&apos;SCH.1&apos;][&apos;SCH.1.1&apos;].toString();
-logger.info(&quot;SIU: External ID from message = &quot; + msgApptID );
-
-var sql = &quot;SELECT recordnum,ssExternalID from APPT6 where ssExternalID = &apos;&quot; + msgApptID + &quot;&apos;&quot;;
+            <script>var patientRN = $(&apos;Patient RecordNum&apos;);
+var URL = &apos;https://WSIO123APP.hdwa.health.wa.gov.au/Titanium/Patient.svc/ajaxEndpoint/PATIENTS/UpdatePatientSearchIndex/&apos; + patientRN.replace(&quot;:&quot;,&quot;_&quot;);
+channelMap.put(&apos;PatientURL&apos;,&apos;URL&apos;)</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+            <name>Find deleted number</name>
+            <sequenceNumber>1</sequenceNumber>
+            <script>var sql = &quot;select top 1 deleted from debtor4 where code = &apos;B1234566&apos; order by deleted desc&quot;;
 
 var results = SQLSelect(sql);
 
 if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
-	var apptID = results.getString(&apos;ssExternalID&apos;);
-} else {
-	var apptID = msgApptID;
-	logger.info(&quot;SIU: appt id not in here&quot;);
+	var deleted = results.getString(&apos;deleted&apos;) + 1;	// deleted record exists
+} else { // the appointment doesn&apos;t exist - a new one must be created
+	var deleted = 1; // no deleted record
 }
 
-channelMap.put(&quot;Appointment ID&quot;,apptID);</script>
+channelMap.put(&apos;PatientDeleted&apos;,deleted);</script>
           </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Current Date</name>
-            <sequenceNumber>1</sequenceNumber>
-            <variable>Current Date</variable>
-            <mapping>DateUtil.getCurrentDate(&apos;yyyy-MM-dd&apos;)</mapping>
-            <defaultValue></defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
-          <com.mirth.connect.plugins.mapper.MapperStep>
-            <name>Current Time</name>
-            <sequenceNumber>2</sequenceNumber>
-            <variable>Current Time</variable>
-            <mapping>&quot;1899-12-30 &quot; + DateUtil.getCurrentDate(&apos;HH:mm:ss&apos;)</mapping>
-            <defaultValue></defaultValue>
-            <replacements/>
-            <scope>CHANNEL</scope>
-          </com.mirth.connect.plugins.mapper.MapperStep>
         </elements>
         <inboundTemplate encoding="base64">TVNIfF5+XCZ8V0VCUEFTXkhkd2FBcHBsaWNhdGlvbi5XRUJQQVNeTHwwMTA3Xkhkd2FNZWRpY2Fs
-RmFjaWxpdHkuMDEwN15MfHwwOTE3fDIwMTcwNDI4MTQxODU2fHxTSVVeUzEyXlNJVV9TMTJ8fFB8
-Mi42fHx8QUx8TkV8fEFTQ0lJDVNDSHxQUUAzMDA4MTkxNnx8fHx8QUReQWRkfFJPVVRJTkVeUm91
-dGluZXx8MTB8TXx8fHx8fHx8fHx8fHx8fEJvb2tlZA1QSUR8MXx8RDU5MDA5MDleXl5IRFdBXk1S
-XjA5MTdeXn42NTY1NjU2NTY1MV5eXkFVU0hJQ15NQ14wOTE3Xl4yMDIwMDl+NjAzNDIxMzIzVF5e
-XkFVU0hJQ15QRU5eMDkxN15eMjAyMDA5MjN+V1gxMjMxNDVeXl5BVVNEVkFeRFZHXjA5MTdeXjIw
-MjAwOTIxflNOMzAyNzI0NTYzXl5eQVVTSElDXlNORVReMDkxN15eMjAxODA5MjF+IiJeXl5eXjA5
-MTdeXn4iIl5eXl5eMDkxN15efiIiXl5eXl4wOTE3Xl58fEZGRUlDVF5ERU5UQUwxXkFORFleXk1T
-VFJeXkx8fDIwMDEwMjE2fE18fDReTmVpdGhlciBBYm9yaWdpbmFsIG5vciBUU0leSGloSEw3djI2
-LkFib3JpZ2luYWxpdHlDb2Rlc140Xk90aGVyXldlYnBhc0hMN3YyMzEuQWJvcmlnaW5hbGl0eUNv
-ZGVzXjEuMC4wXjEuMC4wXk90aGVyfDY3IFdBTFRFUlMgRFJJVkVeXk9TQk9STkUgUEFSS15XQV42
-MDE3XkFVU15SXl5eXl5eXl5eTl5OfHxeUF5UXjkxMTExMTExXl5eXl5eXl5eMjAxNzA0MjgxMTE1
-MTV+XlBeRV5kZW50YWwxQGdtYWlsLmNvbV5eXl5eXl5eXjIwMTcwNDI4MTExNTE1fl5QXk1eMDQw
-MzMzMzMzM15eXl5eXl5eXjIwMTcwNDI4MTExNTE1fF5CXlReOTIyMjIyMjJeXl5eXl5eXl4yMDE3
-MDQyODExMTUxNXw2NTE0XkJhbGluZXNlXkhpaEhMN3YyNi5MYW5ndWFnZUNvZGVzXjY1MTReQmFs
-aW5lc2VeV2VicGFzSEw3djIzMS5MYW5ndWFnZUNvZGVzXjEuMC4wXjEuMC4wXkJhbGluZXNlfFNe
-TkVWRVJfTUFSUklFRF5IaWhITDd2MjYuTWFyaXRhbFN0YXR1c0NvZGVzXlNeU2luZ2xlXldlYnBh
-c0hMN3YyMzEuTWFyaXRhbFN0YXR1c0NvZGVzXjEuMC4wXjEuMC4wXk5ldmVyIE1hcnJpZWR8QlVE
-XkJ1ZGRoaXN0XkhpaEhMN3YyNi5SZWxpZ2lvbkNvZGVzXkJVRF5CdWRkaGlzdF5XZWJwYXNITDd2
-MjMxLlJlbGlnaW9uQ29kZXNeMS4wLjBeMS4wLjBeQnVkZGhpc3R8UFFAMzAwODE5MTZeXl5IRFdB
-XlZOXjA5MTd8fHx8fDA5MDV8fHx8fHwiIg1QVjF8fE98fHx8fHxXZWJwYXMuNjAwNTA5Xk5HVVlF
-Tl5USFVZXl5eRFJeXndlYlBBU15IRFdBXkxeXl5ETl4wOTE3fDUyMDAwM15ERU5UQUxeUENIXl5e
-RFJeXndlYlBBU15IRFdBXkxeXl5ETl4wOTE3fERFTnx8fHx8fHx8fFBRQDMwMDgxOTE2Xl5eSERX
-QV5WTl4wOTE3fFBWVF5eUFJJVkFURSBJTlNVUkVEXkhpaEhMN3YyNi5GaW5hbmNpYWxDbGFzc0Nv
-ZGVzXlBWVF5Qcml2YXRlIEluc3VyZWReV2VicGFzSEw3djIzMS5GaW5hbmNpYWxDbGFzc0NvZGVz
-XjEuMC4wXjEuMC4wXnx8fHx8fHx8fHx8fHx8fHx8fHwwMTA3fHx8REVONzc0Xl5eMDEwNyZIZHdh
-TWVkaWNhbEZhY2lsaXR5LjAxMDcmTF5eQ15eXkRyIFBDSCBERU5UQUxeXkhEV0F8fDIwMTcwNTAy
-MDgwMDAwfA1SR1N8MQ1BSUx8MXxBfHx8fDIwMTcwNTAyMDgwMDAwfHx8MTB8TXx8Qm9va2Vk</inboundTemplate>
+RmFjaWxpdHkuMDEwN15MfEVTQl5IZHdhQXBwbGljYXRpb24uRVNCXkx8MDkxN15IZHdhTWVkaWNh
+bEZhY2lsaXR5LjA5MTdeTHwyMDE4MDIxNTExMjQ0OXx8UkVGXkkxMl58MTM4MDQzNTB8RF5UfDIu
+Nnx8fEFMfE5FfEFVU3xBU0NJSXxlbl5FbmdsaXNoXklTTyA2MzktMXx8SGloSEw3djI2XzMuMV5I
+RFdBXl5MClJGMXxQXlBlbmRpbmdeSEw3MDI4M3xVXlVyZ2VudF45OU5aUHJpb3JpdHl8IiJ8fHxO
+b3QgRW50ZXJlZF5SZWZlcnJhbCBJRHwyMDE4MDIxNXx8fHwzMDA5MDgyMF53ZWJQQVMKUFJEfFJQ
+Xl53ZWJQQVN8IiIKUFJEfFJUXl53ZWJQQVN8IiIKUElEfHx8QzkzMzk5MDReXklTT15IRFdBXk1S
+XjAxMDd+NjU2NTY1NjU2NTFeXl5eTUN+IiJeXl5eUEVOfiIiXl5eQVVTRFZBXkRWfiIiXl5eXlNO
+fiIiXl5eXkNOfiIiXl5eXlNFTn4iIl5eXl5DTU9+IiJeXl5eTkRTfHxGRkVJQ1ReQ0FNRVJPTl5V
+UEdSQURFXl5Nc3RyXl5MfHwyMDA1MDYyMXxNfEZGRUlDVF5DQU1eUENIfkZGRUlDVF5DQU1FUk9O
+XlBDSElDVH5GRkVJQ1ReQ0FNRVJPTl5QQ0hJQ1QgVVBHUkFERXw0Xk90aGVyXldBfH42NyBXQUxU
+RVJTIERSSVZFXiIiXk9TQk9STkUgUEFSS15XQV42MDE3XkFVU1RSQUxJQV5DfHxeUFJOXlBIXkNh
+bUBnbWFpbC5jb21eXl45MTExMTExMX5eXkNQXl5eXjA0MzMzMzMzMzN8XldQTl5QSF5eXl45MjIy
+MjIyMnw2MzAyXlZpZXRuYW1lc2VeTkhERC0xMzJeWXxTXk5ldmVyIE1hcnJpZWReSEw3MDAwMnxC
+VUReQnVkZGhpc3Red2ViUEFTfDMwMDkwODIwfHx8IiJ8fDA5MDV8fHx8IiJ8UkVTXlJlc2lkZW50
+XndlYlBBU3wiInxOCk5LMXwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwi
+InwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwi
+InwiInwiInwiInwiIgpQVjF8MXxPfCIifHwzMDA5MDgyMHx8IiJ8IiJ8IiJ8MTAwNHx8fHxHRVB8
+fHwiInx8MzAwOTA4MjB8VU5LfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8MjAxODAyMTUKWlhQfCIi
+fDIwMTcxMHwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwiInwi
+InwiInwiInwiInwiInxVfCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIifCIi
+fCIifFV8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8IiJ8VXwiInww
+ClpYVnx8fHx8fFVSR14xIFdpdGhpbiAzMCBkYXlzXndlYlBBU3xBU1NeQXNzZXNzbWVudF53ZWJQ
+QVN8fDIwMTgwMjE1fHx8fHx8R0VQXkdlbmVyYWwgUHJhY3RpdGlvbmVyXndlYlBBU3x8fHx8fHx8
+fHx8fHx8fHx8WXx8VEhSXjMgTW9udGhzXndlYlBBU3xQUTFeUGVydGggQ2hpbGRyZW4ncyBIb3Nw
+aXRhbF53ZWJQQVN8MjAxODAyMTV8REVOXkRlbnRhbF53ZWJQQVN8IiJ8IiJ+IiJ+IiJ8REVOXkRl
+bnRhbF53ZWJQQVN8MjAxODAyMTUxMTI0NDd8fHwiInwiInwiInwiInwiInwiInx8IiJ8fHx8fCIi
+fENMUF5DbGllbnQgUHJlc2VudF53ZWJQQVMK</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundDataType>HL7V2</inboundDataType>
         <outboundDataType>HL7V2</outboundDataType>
@@ -1322,19 +969,244 @@ MDgwMDAwfA1SR1N8MQ1BSUx8MXxBfHx8fDIwMTcwNTAyMDgwMDAwfHx8MTB8TXx8Qm9va2Vk</inboun
       <filter version="3.5.1">
         <elements>
           <com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
-            <name>Accept message if &quot;msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()&quot; equals &quot;S15&quot;</name>
+            <name>Accept message if &quot;msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()&quot; equals &quot;I14&quot;</name>
             <sequenceNumber>0</sequenceNumber>
             <field>msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString()</field>
             <condition>EQUALS</condition>
             <values>
-              <string>&quot;S15&quot;</string>
+              <string>&quot;I14&quot;</string>
             </values>
           </com.mirth.connect.plugins.rulebuilder.RuleBuilderRule>
+          <com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
+            <name>Check if patient exists</name>
+            <sequenceNumber>1</sequenceNumber>
+            <operator>AND</operator>
+            <script>// get the patient ID from the repeated PID 3 field&#xd;for each (child in msg[&apos;PID&apos;][&apos;PID.3&apos;]) {&#xd;	if (child[&apos;PID.3.5&apos;].toString() == &apos;MR&apos; &amp;&amp; child[&apos;PID.3.4&apos;].toString() == &apos;HDWA&apos;) {&#xd;		var patientid = child[&apos;PID.3.1&apos;].toString();&#xd;	}
+}
+
+if (!patientid) {
+	logger.info(&apos;REF: HDWA Patient ID not found&apos;);
+	return false;&#xd;}
+&#xd;&#xd;logger.info(&quot;REF: Patient ID = &quot; + patientid);&#xd;&#xd;//SQL to get the RecordNum&#xd;var sql = &quot;SELECT recordnum from Debtor4 where code = &apos;&quot; + patientid.toString() + &quot;&apos; and deleted = 0&quot;;&#xd;&#xd;var results = SQLSelect(sql);&#xd;&#xd;if (results.size() == 0) { // patient not in Titanium&#xd;	logger.info(&quot;REF: No such patient &quot; + patientid.toString() + &quot;, no action taken.&quot;);&#xd;	return false;&#xd;} else { // patient exists in Titanium&#xd;	results.next(); // The ResultSet starts at row 0 - so we advance to row 1&#xd;	var patientRN = results.getString(&apos;RecordNum&apos;);
+	logger.info(&quot;REF: Patient Recordnum &quot; + patientRN + &quot; exists, &quot;);&#xd;	channelMap.put(&apos;Patient RecordNum&apos; , patientRN);&#xd;	channelMap.put(&apos;Patient code&apos; , patientid.toString());
+	// now we need to check if they have an appointment
+	var sql = &quot;SELECT recordnum,ridPatient,ssExternalID from APPT6 where ridPatient = &apos;&quot; + patientRN + &quot;&apos; and deleted = 0 and wStatus = 1&quot;;
+	var results = SQLSelect(sql);
+	if (results.next()) { // executeCachedQuery starts at row 0 of the ResultSet - so we advance to row 1
+		var apptID = results.getString(&apos;ssExternalID&apos;); // the appointment already exists in the DB - don&apos;t remove the patient
+		return false;
+	} else { // no appointment - we can remove the patient
+		logger.info(&quot;REF: No appointment - remove patient from Titanium&quot;);
+		return true;
+	}
+	return false;&#xd;}</script>
+          </com.mirth.connect.plugins.javascriptrule.JavaScriptRule>
         </elements>
       </filter>
       <transportName>Database Writer</transportName>
       <mode>DESTINATION</mode>
-      <enabled>true</enabled>
+      <enabled>false</enabled>
+      <waitForPrevious>true</waitForPrevious>
+    </connector>
+    <connector version="3.5.1">
+      <metaDataId>4</metaDataId>
+      <name>Update patient cache</name>
+      <properties class="com.mirth.connect.connectors.js.JavaScriptDispatcherProperties" version="3.5.1">
+        <pluginProperties/>
+        <destinationConnectorProperties version="3.5.1">
+          <queueEnabled>false</queueEnabled>
+          <sendFirst>false</sendFirst>
+          <retryIntervalMillis>10000</retryIntervalMillis>
+          <regenerateTemplate>false</regenerateTemplate>
+          <retryCount>0</retryCount>
+          <rotate>false</rotate>
+          <includeFilterTransformer>false</includeFilterTransformer>
+          <threadCount>1</threadCount>
+          <threadAssignmentVariable></threadAssignmentVariable>
+          <validateResponse>false</validateResponse>
+          <resourceIds class="linked-hash-map">
+            <entry>
+              <string>Default Resource</string>
+              <string>[Default Resource]</string>
+            </entry>
+          </resourceIds>
+          <queueBufferSize>1000</queueBufferSize>
+          <reattachAttachments>true</reattachAttachments>
+        </destinationConnectorProperties>
+        <script>loadurl($(&apos;PatientURL&apos;));</script>
+      </properties>
+      <transformer version="3.5.1">
+        <elements/>
+        <inboundDataType>HL7V2</inboundDataType>
+        <outboundDataType>HL7V2</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </outboundProperties>
+      </transformer>
+      <responseTransformer version="3.5.1">
+        <elements/>
+        <inboundDataType>HL7V2</inboundDataType>
+        <outboundDataType>HL7V2</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.5.1">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.5.1">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.5.1">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.5.1">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.5.1">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.5.1">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </outboundProperties>
+      </responseTransformer>
+      <filter version="3.5.1">
+        <elements/>
+      </filter>
+      <transportName>JavaScript Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>false</enabled>
       <waitForPrevious>true</waitForPrevious>
     </connector>
   </destinationConnectors>
@@ -1343,79 +1215,8 @@ return message;</preprocessingScript>
   <postprocessingScript>// This script executes once after a message has been processed
 // Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map
 return;</postprocessingScript>
-  <deployScript>// connection string, so we don&apos;t have to define it everywhere
-
-//$g(&apos;dbTitanium&apos;, DatabaseConnectionFactory.createDatabaseConnection(&apos;net.sourceforge.jtds.jdbc.Driver&apos;,&apos;jdbc:jtds:sqlserver://sparkdb05:1433/BR_PMH;&apos;,&apos;titaniumdental&apos;,&apos;!Titanium1&apos;));
-/*
-globalChannelMap.put(
-	&apos;TitaniumDB&apos;,&apos;jdbc:sqlserver://&apos; + configurationMap.get(&apos;Titanium Database Server&apos;) + 
-	&quot;;databaseName=&quot; + configurationMap.get(&apos;Titanium Database Name&apos;)
-	//+ &apos;;user=&apos; + configurationMap.get(&apos;Titanium Username&apos;) +
-	//&apos;;password=&apos; + configurationMap.get(&apos;Titanium Password&apos;)
-	);
-globalChannelMap.put(&apos;TitaniumUser&apos;,configurationMap.get(&apos;Titanium Username&apos;));
-globalChannelMap.put(&apos;TitaniumPass&apos;,configurationMap.get(&apos;Titanium Password&apos;));
-*/
-// map Webpas clinics to Titanium providers - DEN6## is for PMH and DEN7## is for PCH
-
-globalChannelMap.put(&apos;DEN650&apos;,&apos;WONGJ&apos;);
-globalChannelMap.put(&apos;DEN651&apos;,&apos;READMANP&apos;);
-globalChannelMap.put(&apos;DEN652&apos;,&apos;CACAVASF&apos;);
-//globalChannelMap.put(&apos;DEN653&apos;,&apos;SILLIFP&apos;);
-globalChannelMap.put(&apos;DEN654&apos;,&apos;KAKULASE&apos;);
-globalChannelMap.put(&apos;DEN655&apos;,&apos;CARMICHG&apos;);
-globalChannelMap.put(&apos;DEN656&apos;,&apos;TANA&apos;);
-globalChannelMap.put(&apos;DEN657&apos;,&apos;LANDERI&apos;);
-globalChannelMap.put(&apos;DEN658&apos;,&apos;LIDDELOG&apos;);
-globalChannelMap.put(&apos;DEN659&apos;,&apos;MDCCOMBINE&apos;);
-globalChannelMap.put(&apos;DEN660&apos;,&apos;FOSTERM&apos;);
-globalChannelMap.put(&apos;DEN661&apos;,&apos;BALASUBRAR&apos;);
-globalChannelMap.put(&apos;DEN662&apos;,&apos;WHOLLEYC&apos;);
-globalChannelMap.put(&apos;DEN663&apos;,&apos;WINTERSJ&apos;);
-globalChannelMap.put(&apos;DEN664&apos;,&apos;EMERGENCY&apos;);
-//globalChannelMap.put(&apos;DEN665&apos;,&apos;CHARTONLY&apos;);
-globalChannelMap.put(&apos;DEN666&apos;,&apos;TELEPHONE&apos;);
-globalChannelMap.put(&apos;DEN667&apos;,&apos;WILLIAMV&apos;);
-globalChannelMap.put(&apos;DEN668&apos;,&apos;REGISTRAR&apos;);
-globalChannelMap.put(&apos;DEN669&apos;,&apos;RODOREDA&apos;);
-globalChannelMap.put(&apos;DEN670&apos;,&apos;SINGERS&apos;);
-globalChannelMap.put(&apos;DEN671&apos;,&apos;CHANGF&apos;);
-globalChannelMap.put(&apos;DEN672&apos;,&apos;KHADEMBAS&apos;);
-globalChannelMap.put(&apos;DEN673&apos;,&apos;WILLIAMSR&apos;);
-globalChannelMap.put(&apos;DEN674&apos;,&apos;WONGS&apos;);
-globalChannelMap.put(&apos;DEN675&apos;,&apos;HUANGJ&apos;);
-globalChannelMap.put(&apos;DEN676&apos;,&apos;REFUGEE&apos;);
-globalChannelMap.put(&apos;DEN677&apos;,&apos;VUJCICHN&apos;);
-globalChannelMap.put(&apos;DEN678&apos;,&apos;MCALPINEM&apos;);
-globalChannelMap.put(&apos;DEN750&apos;,&apos;WONGJ&apos;);
-globalChannelMap.put(&apos;DEN751&apos;,&apos;READMANP&apos;);
-globalChannelMap.put(&apos;DEN752&apos;,&apos;CACAVASF&apos;);
-globalChannelMap.put(&apos;DEN753&apos;,&apos;SILLIFP&apos;);
-globalChannelMap.put(&apos;DEN754&apos;,&apos;KAKULASE&apos;);
-globalChannelMap.put(&apos;DEN755&apos;,&apos;CARMICHG&apos;);
-globalChannelMap.put(&apos;DEN756&apos;,&apos;TANA&apos;);
-globalChannelMap.put(&apos;DEN757&apos;,&apos;LANDERI&apos;);
-globalChannelMap.put(&apos;DEN758&apos;,&apos;LIDDELOG&apos;);
-globalChannelMap.put(&apos;DEN759&apos;,&apos;MDCCOMBINE&apos;);
-globalChannelMap.put(&apos;DEN760&apos;,&apos;FOSTERM&apos;);
-globalChannelMap.put(&apos;DEN761&apos;,&apos;BALASUBRAR&apos;);
-globalChannelMap.put(&apos;DEN762&apos;,&apos;WHOLLEYC&apos;);
-globalChannelMap.put(&apos;DEN763&apos;,&apos;WINTERSJ&apos;);
-globalChannelMap.put(&apos;DEN764&apos;,&apos;WALKIN&apos;);
-globalChannelMap.put(&apos;DEN765&apos;,&apos;CHARTONLY&apos;);
-globalChannelMap.put(&apos;DEN766&apos;,&apos;TELEPHONE&apos;);
-globalChannelMap.put(&apos;DEN767&apos;,&apos;WILLIAMV&apos;);
-globalChannelMap.put(&apos;DEN768&apos;,&apos;REGISTRAR&apos;);
-globalChannelMap.put(&apos;DEN769&apos;,&apos;RODOREDA&apos;);
-globalChannelMap.put(&apos;DEN770&apos;,&apos;SINGERS&apos;);
-globalChannelMap.put(&apos;DEN771&apos;,&apos;CHANGF&apos;);
-globalChannelMap.put(&apos;DEN772&apos;,&apos;KHADEMBAS&apos;);
-globalChannelMap.put(&apos;DEN773&apos;,&apos;WILLIAMSR&apos;);
-globalChannelMap.put(&apos;DEN774&apos;,&apos;WONGS&apos;);
-globalChannelMap.put(&apos;DEN775&apos;,&apos;HUANGJ&apos;);
-globalChannelMap.put(&apos;DEN776&apos;,&apos;REFUGEE&apos;);
-globalChannelMap.put(&apos;DEN777&apos;,&apos;VUJCICHN&apos;);
-globalChannelMap.put(&apos;DEN778&apos;,&apos;MCALPINEM&apos;);
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
 return;</deployScript>
   <undeployScript>// This script executes once when the channel is undeployed
 // You only have access to the globalMap and globalChannelMap here to persist data
@@ -1456,25 +1257,24 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1520382542142</time>
+        <time>1519163908376</time>
         <timezone>Australia/Perth</timezone>
       </lastModified>
       <pruningSettings>
-        <pruneMetaDataDays>7</pruneMetaDataDays>
         <archiveEnabled>true</archiveEnabled>
       </pruningSettings>
     </metadata>
     <channelTags>
       <channelTag>
-        <id>0771bab0-e556-4698-a7e8-47643c9cfdfe</id>
-        <name>SIU</name>
+        <id>e4475a9b-afc8-4668-be5d-aef4e857b544</id>
+        <name>REF</name>
         <channelIds>
-          <string>cfe7a7bf-272f-40e7-8da6-9ec02b52582a</string>
+          <string>e84c9411-a906-467a-a405-61cc970319e6</string>
         </channelIds>
         <backgroundColor>
-          <red>255</red>
-          <green>0</green>
-          <blue>0</blue>
+          <red>51</red>
+          <green>51</green>
+          <blue>255</blue>
           <alpha>255</alpha>
         </backgroundColor>
       </channelTag>
